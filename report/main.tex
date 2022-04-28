@@ -126,7 +126,21 @@
 
 \subsubsection{Matching model for Asylum}
 
-\cite{olbergml} \cite{basshuysen} \cite{delacretaz} 
+\cite{olbergml} \cite{basshuysen} \cite{delacretaz}
+
+
+\begin{table}[!htb]
+    \begin{tabular}{c|c}
+        \hline Countries & Refugees \\
+        \hline\( r_{1} \succ_{c_{1}} r_{2} \succ_{c_{1}} r_{3} \) & \( c_{2} \succ_{1} \) for both \( r_{1} \) and \( r_{2} \) \\
+        \( r_{2} \succ_{c_{2}} r_{1} \succ_{c_{2}} r_{3} \) & \( r_{3} \) declares only \( c_{2} \) acceptable \\
+        \hline
+    \end{tabular}
+    \caption Table specifying refugees and countries preferences for
+    the study case: There are three refugees, \( r _ { 1 } , r _ { 2 } , r _ { 3 } \), and two countries \( c _ { 1 } , c _ { 2 } \) with \( q _ { 1 } = 2 \) and \( q _ { 2 } = 1 \).
+    When \( a \succ_{c} b \) denotes that \( c \) strictly prefers \( a \) to \( b \).
+    \label{tab:countries-refugees}
+\end{table}
 
 \subsubsection{Matching model in case of disaster}
 
@@ -144,7 +158,20 @@ Another regulation is that from the center of a room to the nearest emergency ex
 fire compartment there can be maximum 60 meters. These two combinations generate a matching model 
 very similar and very correlated to that of Asylum.
 
-\cite{delacretaz} 
+\cite{delacretaz}
+
+\begin{table}[!htb]
+    \begin{tabular}{c|c}
+        \hline People & Exit \\
+        \hline\( p_{1} \succ_{e_{1}} p_{2} \succ_{e_{1}} p_{3} \) & \( e_{2} \succ_{1} \) for both \( p_{1} \) and \( p_{2} \) \\
+        \( p_{2} \succ_{e_{2}} p_{1} \succ_{e_{2}} p_{3} \) & \( p_{3} \) declares only \( e_{2} \) within 60 mt \\
+        \hline
+    \end{tabular}
+    \caption Table specifying people and exit preferences for
+    the study case: There are three group people, \( p _ { 1 } , p _ { 2 } , p _ { 3 } \), and two fire exit \( e _ { 1 } , e _ { 2 } \) with \( p _ { 1 } = 2 \) and \( p _ { 2 } = 1 \).
+    When \( a \succ_{e} b \) denotes that \( e \) strictly prefers \( a \) to \( b \).
+    \label{tab:people-exit}
+\end{table}
 
 \subsubsection{Similarities and differences between mechanisms}
 
