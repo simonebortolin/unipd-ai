@@ -12,6 +12,7 @@
 \def\UrlFont{\rm}  % DO NOT CHANGE THIS
 \usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
 \usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{amsfonts}
 \frenchspacing  % DO NOT CHANGE THIS
 \setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
 \setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
@@ -118,15 +119,52 @@
     between them, but in reality they are extremely tied and similar.
 \end{abstract}
 
-\noindent \cite{olbergml} \cite{basshuysen} \cite{delacretaz} \cite{andersson} 
+\noindent \cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020} \cite{andersson} 
 
 \subsection{Matching model}
 
-\cite{olbergml} \cite{basshuysen} \cite{delacretaz} 
+\cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020} 
 
 \subsubsection{Matching model for Asylum}
 
-\cite{olbergml} \cite{basshuysen} \cite{delacretaz}
+\cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020}
+
+
+\cite{fernandez} propose implementing a College Admissions (CA)
+model on the asylum market. The model differs from the EU model\cite{basshuysen} because it looks not only at the preferences of the states that take people but also at the preferences of the refugees.
+it can be said that it is a generalized EU model.
+
+According to the notations of \cite{salles} formally, a CA-instance of a refugee-country matching problem is a four-tuple \((C, R, q, P)\), where
+\(C = \{c_1, ..., c_m\}\) and \(R = \{r_1, ...,r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees, respectively.
+The agents of the market, definition that comes from game theory, are \(a_k \in C\subset R\),
+since it can be assumed that \(n >> m\) it is also evident that it is a many-to-one matchings with an upper limit on the many side.
+The maximum number of refugees that can be matched to
+each country is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
+You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
+
+Afterwards we have, \(P = \{P(c_1), . . . , P(c_m), P(r_1), . . . , P(r_n)\}\) is
+a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each
+country over the set of refugees and for each refugee over the set of countries. 
+Each preference \(P(r_i)\) contains a list of expressed preferences in the format \( c _ { 1 } \succ r _ { i } c _ { 2 } \),
+and equivalently for countries' preferences.
+
+Finally, there is one last element to consider a list of people who must be together (e.g. a family).
+in this case you should be careful to remove duplicate entries of the same people. Also in this case there is a maximum limit to the number of people to keep in the same group.
+We then introduce \(F=\{F(f_1), ..., F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, ...\}\).
+In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
+
+Countries may declare refugees unacceptable, and refugees may declare countries unacceptable, 
+hence, there is a subset \(E \subseteq R \times C \times F\) of acceptable refugee-country pairs.
+In addition, there is the limitation on the amount of each individual tuple that is acceptable, as a refugee cannot be split into two nations nor can one nation receive more than the maximum allowable quotas.
+
+Denote \( A \left( r _ { i } \right) = \left\{ c _ { j } \mid \left( r _ { i } , c _ { j } \right) \in E \right\} \)
+the set of acceptable countries for a given \( r _ { i } \in R \); and equivalently for the countries.
+An assignemnt \(M\) is a subset of \(E\) and contains the item \( a _ { k } \in R \cup C \). Obviously a refugee \( r _ { i } \) can be unassigned so \( M \left( r _ { i } \right) = \emptyset \).
+Similarly, a country \( c _ { j } \) is
+undersubscribed if \( \left| M \left( c _ { j } \right) \right| < q _ { j } \), and full if \( \left| M \left( c _ { j } \right) \right| = q _ { j } \).
+It is to remember that the assignment is valid if and only if:
+\( \left| M \left( r _ { i } \right) \right| \leq 1 \) for all \( r _ { i } \in R ; \) and
+\( \left| M \left( c _ { j } \right) \right| \leq q _ { j } \) for all \( c _ { j } \in C  \).
 
 
 \begin{table}[!htb]
@@ -144,7 +182,8 @@
 
 \subsubsection{Matching model in case of disaster}
 
-Almost every state has regulations for safety and construction of escape routes, in general these 
+Almost every state has regulations for safety and construction of escape routes (\cite{it-81-2008},
+\cite{uk-1541-2005}, \cite{usa-1910-1974}, \cite{cee-654-1989} and \cite{cee-567-1977}), in general these 
 regulations can be summarized as: every 60\footnote{60 cm is the minimum size for a person to be 
 able to walk without crawling or anything else} cm of corridor/door/staircase can come out around 50-70
 \footnote{In american regulations this number is always fixed at 60, in europe this number is more 
@@ -158,7 +197,7 @@ Another regulation is that from the center of a room to the nearest emergency ex
 fire compartment there can be maximum 60 meters. These two combinations generate a matching model 
 very similar and very correlated to that of Asylum.
 
-\cite{delacretaz}
+
 
 \begin{table}[!htb]
     \begin{tabular}{c|c}
@@ -181,11 +220,14 @@ The previous models, as well guessed are very important in case of war: the firs
 to redistribute in a fair way people in case of mass escapes, the second one to optimize the evacuation 
 towards bunkers or other safe places in case of attacks and attempts to buildings.
 
-\cite{delacretaz} 
+\cite{delacretaz_2020} 
 
 \subsection{Mechanisms}
 
+
 \subsubsection{Matching models as College Admissions Problem}
+
+
 
 \cite{basshuysen} 
 
