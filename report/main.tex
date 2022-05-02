@@ -13,6 +13,7 @@
 \usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
 \usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \frenchspacing  % DO NOT CHANGE THIS
 \setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
 \setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
@@ -119,22 +120,20 @@
     between them, but in reality they are extremely tied and similar.
 \end{abstract}
 
-\noindent \cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020} \cite{andersson} 
+\noindent \cite{olbergml,basshuysen,delacretaz_2020,andersson}
 
 \subsection{Matching model}
 
-\cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020} 
+\cite{olbergml,basshuysen,delacretaz_2020}
 
 \subsubsection{Matching model for Asylum}
 
-\cite{olbergml} \cite{basshuysen} \cite{delacretaz_2020}
-
-
-\cite{fernandez} propose implementing a College Admissions (CA)
+\cite{olbergml,basshuysen,delacretaz_2020,fernandez} propose implementing a College Admissions (CA)
 model on the asylum market. The model differs from the EU model\cite{basshuysen} because it looks not only at the preferences of the states that take people but also at the preferences of the refugees.
 it can be said that it is a generalized EU model.
 
-According to the notations of \cite{salles} formally, a CA-instance of a refugee-country matching problem is a four-tuple \((C, R, q, P)\), where
+According to the notations of \cite{salles} formally, a CA-instance of a refugee-country matching problem is a four-tuple \((C, R, q, P)\)
+(or if treated in a more real way, a 5-tuple \((C, R, q, P, F)\)), where
 \(C = \{c_1, ..., c_m\}\) and \(R = \{r_1, ...,r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees, respectively.
 The agents of the market, definition that comes from game theory, are \(a_k \in C\subset R\),
 since it can be assumed that \(n >> m\) it is also evident that it is a many-to-one matchings with an upper limit on the many side.
@@ -142,13 +141,14 @@ The maximum number of refugees that can be matched to
 each country is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
 You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
 
-Afterwards we have, \(P = \{P(c_1), . . . , P(c_m), P(r_1), . . . , P(r_n)\}\) is
+Afterwards we have, \(P = \{P(c_1), \dots , P(c_m), P(r_1), \dots , P(r_n)\}\) is
 a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each
 country over the set of refugees and for each refugee over the set of countries. 
 Each preference \(P(r_i)\) contains a list of expressed preferences in the format \( c _ { 1 } \succ r _ { i } c _ { 2 } \),
 and equivalently for countries' preferences.
+And example was illustrated in Table \ref{tab:countries-refugees}.
 
-Finally, there is one last element to consider a list of people who must be together (e.g. a family).
+Finally, there is one last element to consider a list of people who must be together (e.g. a family)
 in this case you should be careful to remove duplicate entries of the same people. Also in this case there is a maximum limit to the number of people to keep in the same group.
 We then introduce \(F=\{F(f_1), ..., F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, ...\}\).
 In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
@@ -174,16 +174,15 @@ It is to remember that the assignment is valid if and only if:
         \( r_{2} \succ_{c_{2}} r_{1} \succ_{c_{2}} r_{3} \) & \( r_{3} \) declares only \( c_{2} \) acceptable \\
         \hline
     \end{tabular}
-    \caption Table specifying refugees and countries preferences for
+    \caption{Table specifying refugees and countries preferences for
     the study case: There are three refugees, \( r _ { 1 } , r _ { 2 } , r _ { 3 } \), and two countries \( c _ { 1 } , c _ { 2 } \) with \( q _ { 1 } = 2 \) and \( q _ { 2 } = 1 \).
-    When \( a \succ_{c} b \) denotes that \( c \) strictly prefers \( a \) to \( b \).
+    When \( a \succ_{c} b \) denotes that \( c \) strictly prefers \( a \) to \( b \).}
     \label{tab:countries-refugees}
 \end{table}
 
 \subsubsection{Matching model in case of disaster}
 
-Almost every state has regulations for safety and construction of escape routes (\cite{it-81-2008},
-\cite{uk-1541-2005}, \cite{usa-1910-1974}, \cite{cee-654-1989} and \cite{cee-567-1977}), in general these 
+Almost every state has regulations for safety and construction of escape routes (\cite{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), in general these
 regulations can be summarized as: every 60\footnote{60 cm is the minimum size for a person to be 
 able to walk without crawling or anything else} cm of corridor/door/staircase can come out around 50-70
 \footnote{In american regulations this number is always fixed at 60, in europe this number is more 
@@ -197,7 +196,37 @@ Another regulation is that from the center of a room to the nearest emergency ex
 fire compartment there can be maximum 60 meters. These two combinations generate a matching model 
 very similar and very correlated to that of Asylum.
 
+A CA-instance of a people-exit matching problem is a four-tuple \((E, P, q, N)\)
+(or if treated in a more real way, a 5-tuple \((E, P, q, N, F)\)), where
+\(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots,p_n\}\) are disjoint sets of \(m\) people and \(n\) fire exit.
+The agents of the market  are \(a_k \in P\subset E\),
+since it can be assumed that \(n << m\) it is also evident that it is a many-to-one matchings with an upper limit on the many side.
+The maximum number of people that can be matched to
+each fire exit is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
+You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
 
+Similarly to before we have, \(P = \{P(e_1), \dots , P(e_m), P(p_1), \dots , P(p_n)\}\) is
+a set of preference lists.
+Each preference \(P(p_i)\) contains a list of expressed preferences in the format \( e _ { 1 } \succ p _ { i } e _ { 2 } \),
+and equivalently for exits' preferences.
+ And example was illustrated in Table \ref{tab:people-exit}.
+
+Finally, there is one last element to consider a list of people who must be together (e.g. a family): \(F=\{F(f_1), ..., F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, ...\}\).
+In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
+
+Fire exit may declare people unacceptable, and people may declare fire exit unacceptable,
+hence, there is a subset \(E \subseteq R \times C \times F\) of acceptable people-exit pairs.
+In addition, there is the limitation on the amount of each individual tuple that is acceptable, as a people cannot be split into two fire exit nor can one fire exit receive more than the maximum allowable quotas.
+
+Denote \( A \left( r _ { i } \right) = \left\{ p _ { j } \mid \left( e _ { i } , p _ { j } \right) \in E \right\} \)
+the set of acceptable people for a given \( p _ { i } \in P \); and equivalently for the people.
+An assignemnt \(M\) is a subset of \(E\) and contains the item \( a _ { k } \in R \cup C \). In this case instead it is not possible that \( p _ { i } \) can be unassigned so \( M \left( e _ { i } \right) \neq \emptyset \) although it is possible that for some reason that exit is impracticable.
+Just for this reason it is possible to realize models in which you have \(|M \left( e _ { i } \right)| \geq 1\), we omit the analysis of these models.
+Similarly, a exit \( e _ { j } \) is
+undersubscribed if \( \left| M \left( e _ { j } \right) \right| < q _ { j } \), and full if \( \left| M \left( e _ { j } \right) \right| = q _ { j } \).
+It is to remember that the assignment is valid if and only if:
+\( \left| M \left( p _ { i } \right) \right| = 1 \) for all \( e _ { i } \in R ; \) and
+\( \left| M \left( e _ { j } \right) \right| \leq q _ { j } \) for all \( p _ { j } \in C  \).
 
 \begin{table}[!htb]
     \begin{tabular}{c|c}
@@ -206,21 +235,24 @@ very similar and very correlated to that of Asylum.
         \( p_{2} \succ_{e_{2}} p_{1} \succ_{e_{2}} p_{3} \) & \( p_{3} \) declares only \( e_{2} \) within 60 mt \\
         \hline
     \end{tabular}
-    \caption Table specifying people and exit preferences for
+    \caption{Table specifying people and exit preferences for
     the study case: There are three group people, \( p _ { 1 } , p _ { 2 } , p _ { 3 } \), and two fire exit \( e _ { 1 } , e _ { 2 } \) with \( p _ { 1 } = 2 \) and \( p _ { 2 } = 1 \).
-    When \( a \succ_{e} b \) denotes that \( e \) strictly prefers \( a \) to \( b \).
+    When \( a \succ_{e} b \) denotes that \( e \) strictly prefers \( a \) to \( b \).}
     \label{tab:people-exit}
 \end{table}
-
-\subsubsection{Similarities and differences between mechanisms}
 
 \subsubsection{Use of matching models in case of war}
 
 The previous models, as well guessed are very important in case of war: the first model is used just 
 to redistribute in a fair way people in case of mass escapes, the second one to optimize the evacuation 
 towards bunkers or other safe places in case of attacks and attempts to buildings.
+The second model can be widely used to manage the evacuation and moving to safe locations of buildings, hospitals, entire campuses, cities and counties.
+In \cite{delacretaz_2020,delacretaz_2019,delacretaz_2016}   there are other example cases of use of this models.
 
-\cite{delacretaz_2020} 
+\subsubsection{Similarities and differences between mechanisms}
+
+As we have seen the two previous models are very similar, there are few differences and it is possible to use a common system for the analysis and to realize the matching for both cases.
+in fact in \cite{delacretaz_2020} it comes generalized the model to more situations.
 
 \subsection{Mechanisms}
 
@@ -250,7 +282,7 @@ ethicality in the case of the use of algorithms such as machine learning and err
 \subsection{References}
 
 
-\bibliography{citations.bib}
+\bibliography{citations}
 
 
 
