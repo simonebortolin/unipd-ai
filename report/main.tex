@@ -215,9 +215,9 @@
     each fire exit is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
     You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
 
-    Similarly to before we have, \(Pr = \{Pr(e_1), \dots , Pr(e_m), Pr(p_1), \dots , Pr(p_n)\}\) is
-    a set of preference lists.
-    Each preference \(Pr(p_i)\) contains a list of expressed preferences in the format
+    Similarly to before we have, \(N = \{N(e_1), \dots , N(e_m), N(p_1), \dots , N(p_n)\}\) is
+    a set of the nearest exit lists.
+    Each nearest exit list \(N(p_i)\) contains a list of expressed preferences in the format
     \( e _ { 1 } \succ_{p _ { i }} e _ { 2 } \), and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
 
     Also in the case of evacuation of people, there is one last element to consider a list of people who must be together (e.g. a family):
@@ -234,8 +234,10 @@
     An assignment \(M\) is a subset of \(C\) and contains the item \( a _ { k } \in E \cup P \).
     In the case of a disaster every person should be able to evacuate, so  \( p _ { i } \) can be unassigned and
     \( M \left( p _ { i } \right) \neq \emptyset \) although it is possible that for some reason that exit is impracticable.
-    Just for this reason it is possible to realize models in which you have \(|M \left( e _ { i } \right)| \geq 1\), we
-    omit the analysis of these models.
+    Just for this reason it is possible to realize models in which you have \(|M \left( e _ { i } \right)| \geq 1\)
+    i.e. assign to each user a second emergency exit, so that if the first is impracticable the second can be used.
+    This strategy is to be avoided, and it is better to have a system of detection of impassable exits.
+    We omit the analysis of these models.
     Similarly, an exit \( e _ { j } \) is  under subscribed if
     \( \left| M \left( e _ { j } \right) \right| < q _ { j } \), and full if
     \( \left| M \left( e _ { j } \right) \right| = q _ { j } \).
