@@ -112,7 +112,7 @@
     \begin{abstract}
         In this article we analyze an important case study in machine learning, the case study was born mainly after two facts:
         the Swiss State Secretariat for Migration recently announced a pilot project for a machine
-        learning-based assignment process for refugee resettlement~\cite{olbergml}.
+        learning-based assignment process for refugee resettlement~\citet{olbergml}.
         And the increasing number of terrorist attacks have forced the main emergency lighting companies to produce dynamic lamps
         that indicate which is the real emergency exit and not only the nearest one.
 
@@ -122,19 +122,19 @@
     \end{abstract}
 
     \noindent%
-    ~\cite{olbergml,basshuysen,delacretaz_2020,andersson}
+    ~\citet{olbergml,basshuysen,delacretaz_2020,andersson}
 
     \subsection{Matching model}\label{matching-model}%
-    ~\cite{olbergml,basshuysen,delacretaz_2020}
+    ~\citet{olbergml,basshuysen,delacretaz_2020}
 
     \subsubsection{Matching model for Asylum}\label{matching-model-for-asylum}%
-    ~\cite{olbergml,basshuysen,delacretaz_2020,fernandez} propose implementing a College Admissions (CA)
+    ~\citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose implementing a College Admissions (CA)
     model on the asylum market.
-    The model differs from the EU model~\cite{basshuysen} because it looks not only at the preferences of the states that
+    The model differs from the EU model~\citet{basshuysen} because it looks not only at the preferences of the states that
     take people but also at the preferences of the refugees.
     it can be said that it is a generalized EU model.
 
-    According to the notations of~\cite{salles} formally, a CA-instance of a refugee-country matching problem is a
+    According to the notations of~\citet{salles} formally, a CA-instance of a refugee-country matching problem is a
     four-tuple \((C, R, q, P)\) (or if treated in a more real way, a 5-tuple \((C, R, q, P, F)\)), where
     \(C = \{c_1, \dots, c_m\}\) and \(R = \{r_1, \dots,r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees,
     respectively.
@@ -149,7 +149,7 @@
     a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each
     country over the set of refugees and for each refugee over the set of countries.
     Each preference \(P(r_i)\) contains a list of expressed preferences in the format
-    \( c _ { 1 } \succ r _ { i } c _ { 2 } \),
+    \( c _ { 1 } \succ_{r _ { i }} c _ { 2 } \),
     and equivalently for countries' preferences.
     And example was illustrated in Table~\ref{tab:countries-refugees}.
 
@@ -179,7 +179,7 @@
     \begin{table}[!htb]
         \begin{tabular}{c|c}
             \hline Countries                                          & Refugees                                                   \\
-            \hline\( r_{1} \succ_{c_{1}} r_{2} \succ_{c_{1}} r_{3} \) & \( c_{2} \succ_{1} \) for both \( r_{1} \) and \( r_{2} \) \\
+            \hline\( r_{1} \succ_{c_{1}} r_{2} \succ_{c_{1}} r_{3} \) & \( c_{2} \succ c_{1} \) for both \( r_{1} \) and \( r_{2} \) \\
             \( r_{2} \succ_{c_{2}} r_{1} \succ_{c_{2}} r_{3} \)       & \( r_{3} \) declares only \( c_{2} \) acceptable           \\
             \hline
         \end{tabular}
@@ -191,7 +191,7 @@
 
     \subsubsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
     Almost every state has regulations for safety and construction of escape routes
-    (\cite{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), in general these
+    (\citet{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), in general these
     regulations can be summarized as: every 60\footnote{60 cm is the minimum size for a person to be
     able to walk without crawling or anything else} cm of corridor/door/staircase can come out around 50-70
     \footnote{In american regulations this number is always fixed at 60, in europe this number is more
@@ -218,7 +218,7 @@
     Similarly to before we have, \(P = \{P(e_1), \dots , P(e_m), P(p_1), \dots , P(p_n)\}\) is
     a set of preference lists.
     Each preference \(P(p_i)\) contains a list of expressed preferences in the format
-    \( e _ { 1 } \succ p _ { i } e _ { 2 } \), and equivalently for exits' preferences.
+    \( e _ { 1 } \succ_{p _ { i }} e _ { 2 } \), and equivalently for exits' preferences.
     And example was illustrated in Table~\ref{tab:people-exit}.
 
     Finally, there is one last element to consider a list of people who must be together (e.g. a family):
@@ -247,7 +247,7 @@
     \begin{table}[!htb]
         \begin{tabular}{c|c}
             \hline People                                             & Exit                                                       \\
-            \hline\( p_{1} \succ_{e_{1}} p_{2} \succ_{e_{1}} p_{3} \) & \( e_{2} \succ_{1} \) for both \( p_{1} \) and \( p_{2} \) \\
+            \hline\( p_{1} \succ_{e_{1}} p_{2} \succ_{e_{1}} p_{3} \) & \( e_{2} \succ e_{1} \) for both \( p_{1} \) and \( p_{2} \) \\
             \( p_{2} \succ_{e_{2}} p_{1} \succ_{e_{2}} p_{3} \)       & \( p_{3} \) declares only \( e_{2} \) within 60 mt         \\
             \hline
         \end{tabular}
@@ -264,23 +264,23 @@
     towards bunkers or other safe places in case of attacks and attempts to buildings.
     The second model can be widely used to manage the evacuation and moving to safe locations of buildings, hospitals,
     entire campuses, cities and counties.
-    In~\cite{delacretaz_2020,delacretaz_2019,delacretaz_2016}   there are other example cases of use of this models.
+    In~\citet{delacretaz_2020,delacretaz_2019,delacretaz_2016}   there are other example cases of use of this models.
 
     \subsubsection{Similarities and differences between mechanisms}
 
     As we have seen the two previous models are very similar, there are few differences and it is possible to use a
     common system for the analysis and to realize the matching for both cases.
-    in fact in~\cite{delacretaz_2020} it comes generalized the model to more situations.
+    in fact in~\citet{delacretaz_2020} it comes generalized the model to more situations.
 
     \subsection{Mechanisms}
 
-    \subsubsection{Matching models as College Admissions Problem}~\cite{basshuysen}
+    \subsubsection{Matching models as College Admissions Problem}~\citet{basshuysen}
 
-    \subsubsection{Matching models as School Choice Problem}~\cite{basshuysen}
+    \subsubsection{Matching models as School Choice Problem}~\citet{basshuysen}
 
-    \subsubsection{Machine learning-based Matching}~\cite{olbergml}
+    \subsubsection{Machine learning-based Matching}~\citet{olbergml}
 
-    \subsubsection{Compliance with Ethical Principles}~\cite{basshuysen}
+    \subsubsection{Compliance with Ethical Principles}~\citet{basshuysen}
 
     ethicality in the case of the use of algorithms such as machine learning and error learning
 
