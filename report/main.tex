@@ -110,16 +110,16 @@
     \maketitle
 
     \begin{abstract}
-        In this article we analyze an important case study in machine learning: matching models for evacuation and allocation of people
-        in case of disasters and wars. This case study was born mainly after two facts:
+        In this article we analyze an important case study in machine learning: matching models for evacuation and
+        allocation of people in case of disasters and wars. This case study was born mainly after two facts:
         the Swiss State Secretariat for Migration recently announced a pilot project for a machine
         learning-based assignment process for refugee resettlement~\citet{olbergml}.
-        And the increasing number of terroristic attacks have forced the main emergency lighting companies to produce dynamic lamps
-        that indicate which is the real emergency exit and not only the nearest one.
+        And the increasing number of terroristic attacks have forced the main emergency lighting companies to produce
+        dynamic lamps that indicate which is the real emergency exit and not only the nearest one.
 
-        In the last period moreover due to the increase of natural catastrophes and to the war in Ukraine it becomes more and more
-        necessary to have matching models to manage in automatic way all these themes, that to the first sight could be very untied
-        between them, but in reality they are extremely tied and similar.
+        In the last period moreover due to the increase of natural catastrophes and to the war in Ukraine it becomes
+        more and more necessary to have matching models to manage in automatic way all these themes, that to the first
+        sight could be very untied between them, but in reality they are extremely tied and similar.
     \end{abstract}
 
     \noindent%
@@ -131,8 +131,8 @@
     \subsubsection{Matching model for Asylum}\label{matching-model-for-asylum}%
     ~\citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose implementing a College Admissions (CA)
     model on the asylum market.
-    The model differs from the EU model~\citet{basshuysen} because it looks not only at the preferences of the states that
-    take people but also at the preferences of the refugees.
+    The model differs from the EU model~\citet{basshuysen} because it looks not only at the preferences of the states
+    that take people but also at the preferences of the refugees.
     It can be said that it is a generalized EU model.
 
     According to the notations of~\citet{salles} formally, a CA-instance of a refugee-country matching problem is a
@@ -153,8 +153,8 @@
     \( c _ { 1 } \succ_{r _ { i }} c _ { 2 } \),
     and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
 
-    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be together (e.g. a family)
-    in this case you should be careful to remove duplicate entries of the same people.
+    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be
+    together (e.g. a family) in this case you should be careful to remove duplicate entries of the same people.
     Also in this case there is a maximum limit to the number of people to keep in the same group.
     We then introduce \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
     In the following, for simplicity, we will consider \(l=n\) and \(F(f_i)=\{r_i\}\).
@@ -218,10 +218,11 @@
     Similarly to before we have, \(N = \{N(e_1), \dots , N(e_m), N(p_1), \dots , N(p_n)\}\) is
     a set of the nearest exit lists.
     Each nearest exit list \(N(p_i)\) contains a list of expressed preferences in the format
-    \( e _ { 1 } \succ_{p _ { i }} e _ { 2 } \), and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
+    \( e _ { 1 } \succ_{p _ { i }} e _ { 2 } \), and equivalently for exits' preferences (an example is illustrated in
+    Table~\ref{tab:people-exit}).
 
-    Also in the case of evacuation of people, there is one last element to consider a list of people who must be together (e.g. a family):
-    \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
+    Also in the case of evacuation of people, there is one last element to consider a list of people who must be
+    together (e.g. a family): \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
     In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
 
     Fire exit may declare people unacceptable, and people may declare fire exit unacceptable,
@@ -259,14 +260,15 @@
     \end{table}
 
     \subsubsection{Use of matching models in case of war}\label{use-of-matching-model-in-case-of-war}%
-    The previous models (in~\ref{matching-model-for-asylum},~\ref{matching-model-in-case-of-disaster}), as well guessed are very important in case of war: the first model is used just
+    The previous models (in~\ref{matching-model-for-asylum},~\ref{matching-model-in-case-of-disaster}), as well guessed
+    are very important in case of war: the first model is used just
     to redistribute in a fair way people in case of mass escapes, the second one to optimize the evacuation
     towards bunkers or other safe places in case of attacks and attempts to buildings.
     The second model can be widely used to manage the evacuation and moving to safe locations of buildings, hospitals,
     entire campuses, cities and counties.
     In~\citet{delacretaz_2020,delacretaz_2019,delacretaz_2016}   there are other example cases of use of this models.
 
-    \subsubsection{Similarities and differences between mechanisms}
+    \subsubsection{Similarities and differences between mechanisms}\label{similarities-and-differences-between-mechanisms}
 
     As we have seen the two previous models are very similar, there are few differences and it is possible to use a
     common system for the analysis and to realize the matching for both cases.
@@ -274,20 +276,26 @@
 
     \subsection{Mechanisms}
 
-    \subsubsection{Matching models as College Admissions Problem}~\citet{basshuysen}
+    \subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}~\citet{basshuysen}
 
-    \subsubsection{Matching models as School Choice Problem}~\citet{basshuysen}
+    \subsubsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}~\citet{basshuysen}
 
-    \subsubsection{Machine learning-based Matching}~\citet{olbergml}
+    \subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
 
-    \subsubsection{Compliance with Ethical Principles}~\citet{basshuysen}
+    \subsubsection{Compliance with Ethical Principles}\label{compliance-with-ethical-principles}~\citet{basshuysen}
 
     ethicality in the case of the use of algorithms such as machine learning and error learning
 
+    the use of machine learning algorithms is ethically flawed in all cases where the salvation of people is associated
+    with a Bayesian algorithm since it is a probability that decides the salvation or death of people.
+
+
     \subsection{Conclusion}
 
-    \subsection{References}
+    we have seen two models very adaptable to endless emergency situations and in case of disasters, we have also seen
+    the main models of resolution and we have also seen how they can help people in case of disasters and war
 
+    \subsection{References}
 
     \bibliography{citations}
 
