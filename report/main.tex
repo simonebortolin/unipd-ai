@@ -31,10 +31,13 @@
         Moreover, in the last period, due to the increase of natural catastrophes and to the war in Ukraine it becomes even more necessary to have matching models that manage automatically  these kinds of problems. At first sight they might seem unrelated to each other but in reality they are extremely tied and similar.
     \end{abstract}
 
+    \subsection{Introduction}\label{introduction}
+    ~\citet{olbergml,basshuysen,delacretaz_2020,andersson_2018,andersson_2016}
+    % TODO scrivere una introduzione e citare quelli sopra
+
     \subsection{Matching model}\label{matching-model}%
     ~\citet{olbergml,basshuysen,delacretaz_2020}
-
-    % TODO riassunto sul Matching model
+    % TODO riassunto sul Matching model  e citare quelli sopra
     % in particolare parlare di
     %1) Weakly Envy-free
     %2) Envy-Free
@@ -57,38 +60,38 @@
     The model differs from the EU model of~\citet{basshuysen} because it doesn't try to optimize only the employment success of a refugee in a certain state but it also takes into account refugees' preferences allowing a trade off between family welfare and overall employment success.
     It can be considered as a generalized EU model.
 
-    According also to the formally notation of~\citet{salles}, a CA-instance of a refugee-country matching problem is a 5-tuple $(C, R, q, P, F)$, where $C = \{c_1, \dots, c_m\}$ and $R = \{r_1, \dots, r_n\}$ are disjoint sets of $m$ countries and $n$ refugees, respectively.
+    According also to the formally notation of~\citet{salles}, a CA-instance of a refugee-country matching problem is a 5-tuple \((C, R, q, P, F)\), where \(C = \{c_1, \dots, c_m\}\) and \(R = \{r_1, \dots, r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees, respectively.
 
     Since the distribution of asylum is modelled as a matching problem under preferences, refugees and countries offering asylum make up a two-sided market in which the members of one side are to be distributed over members of the other side.
-    So, we can define agents of the market as $a_k \in C \cup R$.
+    So, we can define agents of the market as \(a_k \in C \cup R\).
     
-    Note that we are concerned with \textit{many-to-one matchings} since it can be assumed that $n \gg m$ and each refugee can obtain asylum in at most one country, whereas a given country can accept many refugees. The maximum number of refugees that can be matched to each country is determined by a vector of quotas $q = (q_j)_j \in \mathbb{N}^m$, $j\in\{1,...,m\}$. There may be no real quotas at all: setting $q_j = n \quad \forall c_j \in C$ makes them dummies.
+    Note that we are concerned with \textit{many-to-one matchings} since it can be assumed that \(n \gg m\) and each refugee can obtain asylum in at most one country, whereas a given country can accept many refugees. The maximum number of refugees that can be matched to each country is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m \quad j\in\{1,\dots ,m\}\). There may be no real quotas at all: setting \(q_j = n \quad \forall c_j \in C\) makes them dummies.
 
-    Afterwards, $P = \{P(c_1), \dots, P(c_m), P(r_1), \dots, P(r_n)\}$ is a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each country over the set of refugees and for each refugee over the set of countries.
-    Each preference $P(r_i)$ contains a list of expressed preferences in the format $c_1 \succ_{r_i} c_2$, and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
+    Afterwards, \(P = \{P(c_1), \dots, P(c_m), P(r_1), \dots, P(r_n)\}\) is a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each country over the set of refugees and for each refugee over the set of countries.
+    Each preference \(P(r_i)\) contains a list of expressed preferences in the format \(c_1 \succ_{r_i} c_2\), and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
 
-    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be together (e.g. a family) and to do so let $F=\{F(f_1), \dots, F(f_l)\}$ be the list of the groups of refugees, where $l \leq n$ and $F(f_i) = \{r_a, r_b, \dots\}$.
+    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be together (e.g. a family) and to do so let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of the groups of refugees, where \(l \leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
     In this case you should be careful to do not exceed the maximum limit to the number of people to keep in the same group and be careful to remove duplicate entries of the same people.
-    In the following, for simplicity, we will consider $l=n$ and $F(f_i)=\{r_i\}$.
+    In the following, for simplicity, we will consider \(l=n\) and \(F(f_i)=\{r_i\}\).
 
-    Countries may declare refugees unacceptable and refugees may declare countries unacceptable, hence, there is a subset $E \subseteq R \times C \times F$ of acceptable refugee-country pairs.
+    Countries may declare refugees unacceptable and refugees may declare countries unacceptable, hence, there is a subset \(E \subseteq R \times C \times F\) of acceptable refugee-country pairs.
     In addition, there is the limit on the amount of each individual tuple that is acceptable, because, as a refugee can't be split into two nations nor can one nation receive more than the maximum allowable quotas.
     
-    Denote $A \left( r_i \right) = \left\{ c_j \mid \left( r_i, c_j \right) \in E \right\}$ the set of acceptable countries for a given $r_i \in R$, and equivalently for the countries.
+    Denote \(A \left( r_i \right) = \left\{ c_j \mid \left( r_i, c_j \right) \in E \right\}\) the set of acceptable countries for a given \(r_i \in R\), and equivalently for the countries.
     
-    An assignment $M$ is a subset of $E$ and contains the item $a_k \in R \cup C$.
-    Obviously a refugee $r_i$ can be unassigned so $M \left( r_i \right) = \emptyset$.
-    Similarly, a country $c_j$ admits applications if $\left| M \left( c_j \right) \right| < q_j$, and it's full if $\left| M \left( c_j \right) \right| = q_j$.
-    Note that the assignment is valid if and only if $\left| M \left( r_i \right) \right| \leq 1$ $\forall r_i \in R$ and $\left| M \left( c_j \right) \right| \leq q_j$ $\forall c_j \in C$.
+    An assignment \(M\) is a subset of \(E\) and contains the item \(a_k \in R \cup C\).
+    Obviously a refugee \(r_i\) can be unassigned so \(M \left( r_i \right) = \emptyset\).
+    Similarly, a country \(c_j\) admits applications if \(\left| M \left( c_j \right) \right| < q_j\), and it's full if \(\left| M \left( c_j \right) \right| = q_j\).
+    Note that the assignment is valid if and only if \(\left| M \left( r_i \right) \right| \leq 1 \forall r_i \in R\) and \(\left| M \left( c_j \right) \right| \leq q_j \forall c_j \in C\)
 
     \begin{table}[!htb]
         \begin{tabular}{c|c}
             \hline Countries & Refugees \\
-            \hline $r_1 \succ_{c_1} r_2 \succ_{c_1} r_3$ & $c_2 \succ c_1$ for both $r_1$ and $r_2$ \\
-            $r_2 \succ_{c_2} r_1 \succ_{c_2} r_3$ & $r_3$ declares only $c_2$ acceptable \\
+            \hline \(r_1 \succ_{c_1} r_2 \succ_{c_1} r_3\) & \(c_2 \succ c_1\) for both \(r_1\) and \(r_2\) \\
+            \(r_2 \succ_{c_2} r_1 \succ_{c_2} r_3\) & \(r_3\) declares only \(c_2\) acceptable \\
             \hline
         \end{tabular}
-        \caption{Refugees and countries preferences example: refugees $r_1, r_2, r_3$; countries $c_1, c_2$ with $q_1 = 2$ and $q_2 = 1$. Notation $a \succ_c b$ denotes that $c$ strictly prefers $a$ to $b$.}
+        \caption{Refugees and countries preferences example: refugees \(r_1, r_2, r_3\); countries \(c_1, c_2\) with \(q_1 = 2\) and \(q_2 = 1\). Notation \(a \succ_c b\) denotes that \(c\) strictly prefers \(a\) to \(b\).}
         \label{tab:countries-refugees}
     \end{table}
 
@@ -96,8 +99,8 @@
         \def\svgwidth{\columnwidth}
         \input{complete_matching.pdf_tex}
         \caption{Matching in a market with two-dimensional constraints. There are five families
-        \(f_1, \dots, f_5\), two localities \(c_1, c_2\), and two dimensions, represented by the left and right columns.
-        The sizes of the families are \((3, 0), (1, 0), (1, 1), (1, 2)\), and \((2, 1)\)}
+            \(f_1, \dots, f_5\), two localities \(c_1, c_2\), and two dimensions, represented by the left and right columns.
+            The sizes of the families are \((3, 0), (1, 0), (1, 1), (1, 2)\), and \((2, 1)\)}
         \label{fig:complete_matching}
     \end{figure}
 
@@ -110,18 +113,18 @@
     
     These two combinations generate a matching model very similar and very correlated to the one for refugee resettlement.
 
-    A CA-instance of a people-exit matching problem is a 5-tuple $(E, P, q, N, F)$, where $E = \{e_1, \dots, e_m\}$ and $P = \{p_1, \dots, p_n\}$ are disjoint sets of $m$ fire exit and $n$ people.
+    A CA-instance of a people-exit matching problem is a 5-tuple \((E, P, q, N, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) fire exit and \(n\) people.
     % to revise ---
-    The agents of the market are $a_k \in P \subset E$, since it can be assumed that $n \ll m$ it is also evident that it is a many-to-one matching with an upper limit on the many side.
-    The maximum number of people that can be matched to each fire exit is determined by a vector of quotas $q = (q_j)_j \in \mathbb{N}^m$, $j\in {1,...,m}$.
-    You can also dummy the quotas in this way:  $q_j = n \forall c_j \in C$.
+    The agents of the market are \(a_k \in P \subset E\), since it can be assumed that \(n \ll m\) it is also evident that it is a many-to-one matching with an upper limit on the many side.
+    The maximum number of people that can be matched to each fire exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,...,m}\).
+    You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
     % ---
 
-    Similarly to the matching model for asylum, let $N = \{N(e_1), \dots, N(e_m), N(p_1), \dots, N(p_n)\}$ be the set of the nearest exit lists.
-    Each nearest exit list $N(p_i)$ contains a list of expressed preferences in the format $e_1 \succ_{p_i} e_2$, and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
+    Similarly to the matching model for asylum, let \(N = \{N(e_1), \dots, N(e_m), N(p_1), \dots, N(p_n)\}\) be the set of the nearest exit lists.
+    Each nearest exit list \(N(p_i)\) contains a list of expressed preferences in the format \(e_1 \succ_{p_i} e_2\), and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
 
-    Also in the case of people evacuation, another element to consider is the list of people who must be together (e.g. a family): $F=\{F(f_1), \dots, F(f_l)\}$ where $l\leq n$ and $F(f_i) = \{r_a, r_b, \dots\}$.
-    In the following, for simplicity, we will consider that $l=n$ and that $F(f_i)=\{r_i\}$.
+    Also in the case of people evacuation, another element to consider is the list of people who must be together (e.g. a family): \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
+    In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
     
     % simonebastasin ha modificato fino a qui
 
@@ -178,9 +181,98 @@
 
     \subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}~\citet{basshuysen}
 
+    % da ~\citet{basshuysen} parlare del motivo per cui non va bene questo problema
+
     \subsubsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}~\citet{basshuysen}
 
+    % da ~\citet{basshuysen} parlare di quando è stato sviluppato il problema, di come si analizza
+
+    % di cosa cambia tra la vecchia \(P\) ed le nuove
+    \(\mathbf { P }= \{P(r_1), \dots, P(r_n)\}\)
+    \(\mathbf { Pri } = \{Pri(c_1), \dots, Pro(c_m)\}\)
+    5-tuple \( ( R , C , q , \mathbf { P } , \mathbf { Pri } ) \)
+    % il resto della definizione è identico alla precedente
+
     \subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
+
+    % in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
+
+    To address this issue, we propose two mechanisms that build on the machine learning-based approach by~\citet{bansak_2018} the constrained random serial dictatorship mechanism
+    (CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml} %continua in \citet{olbergml}
+
+    \begin{algorithm}
+        \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
+        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+        \KwResult{\(\mu\)}
+        \SetKw{Break}{break}
+        \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
+
+        Compute the objective value \( z ^ { * } \) of an optimal solution to:
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+
+        \( Q \leftarrow F \).
+
+        \While{\( Q \neq \emptyset \)}{
+            Remove randomly chosen \( i \in Q \) from \( Q \).
+
+            \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
+                \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
+
+                Solve
+                \[\tiny
+                    \begin{aligned}
+                        \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                        \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                        & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                        & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                        & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+                    \end{aligned}
+                \]%
+
+                and let \( z ^ { \prime } \) denote the objective value of the solution.
+
+                \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
+                    \( \mu ( i ) \leftarrow j \)
+                    \Break
+                }
+            }
+        }
+    \end{algorithm}
+
+    \begin{algorithm}
+        \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
+        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+        \KwResult{\(\mu\)}
+        Compute the objective value \( z \left( \mu ^ { * } \right) \) of an optimal solution to
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+        Let \( \mu \) denote the matching induced by the solution of
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\
+                & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \gamma \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+        with \( \gamma = \alpha z \left( \mu ^ { * } \right) \).
+    \end{algorithm}
 
     \subsubsection{Compliance with Ethical Principles}\label{compliance-with-ethical-principles}~\citet{basshuysen}
 
