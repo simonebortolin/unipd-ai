@@ -31,11 +31,26 @@
         Moreover, in the last period, due to the increase of natural catastrophes and to the war in Ukraine it becomes even more necessary to have matching models that manage automatically  these kinds of problems. At first sight they might seem unrelated to each other but in reality they are extremely tied and similar.
     \end{abstract}
 
-    \noindent%
-    ~\citet{olbergml,basshuysen,delacretaz_2020,andersson}
-
     \subsection{Matching model}\label{matching-model}%
     ~\citet{olbergml,basshuysen,delacretaz_2020}
+
+    % TODO riassunto sul Matching model
+    % in particolare parlare di
+    %1) Weakly Envy-free
+    %2) Envy-Free
+    %3) Stable
+    %4) Non-Wasteful
+    % sono spiegati quì
+    %http://t8el.com/wp-content/uploads/2019/12/DKT-MMRR-Dec2019.pdf
+    % e per citarlo \citet{delacretaz_2019} senza () e \cite{delacretaz_2019} con ()
+    % citare l'immagine con \ref{fig:matching}
+
+    \begin{figure}[!htb]
+        \def\svgwidth{\columnwidth}
+        \input{matching.pdf_tex}
+        \caption{Logical relationships among our solution concepts}
+        \label{fig:matching}
+    \end{figure}
 
     \subsubsection{Matching model for Asylum}\label{matching-model-for-asylum}%
     ~\citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose the implementation of a College Admissions (CA) model for the refugee resettlement matching problem.
@@ -76,6 +91,15 @@
         \caption{Refugees and countries preferences example: refugees $r_1, r_2, r_3$; countries $c_1, c_2$ with $q_1 = 2$ and $q_2 = 1$. Notation $a \succ_c b$ denotes that $c$ strictly prefers $a$ to $b$.}
         \label{tab:countries-refugees}
     \end{table}
+
+    \begin{figure}[!htb] % TODO simonebastasin controlla la caption
+        \def\svgwidth{\columnwidth}
+        \input{complete_matching.pdf_tex}
+        \caption{Matching in a market with two-dimensional constraints. There are five families
+        \(f_1, \dots, f_5\), two localities \(c_1, c_2\), and two dimensions, represented by the left and right columns.
+        The sizes of the families are \((3, 0), (1, 0), (1, 1), (1, 2)\), and \((2, 1)\)}
+        \label{fig:complete_matching}
+    \end{figure}
 
     \subsubsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
     Almost every state has regulations for safety on construction of escape routes (\citet{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), these regulations can usually be summarized as: from every 60 cm\footnote{60 cm is the minimum distance for a person to be able to walk without crawling or anything else} of corridor/staircase can come out around 50-70 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices}.
