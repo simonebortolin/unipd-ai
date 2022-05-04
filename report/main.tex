@@ -2,102 +2,18 @@
 %File: formatting-instructions-latex-2021.tex
 %release 2021.2
 \documentclass[letterpaper]{article} % DO NOT CHANGE THIS
-\usepackage{aaai21}  % DO NOT CHANGE THIS
-\usepackage{times}  % DO NOT CHANGE THIS
-\usepackage{helvet} % DO NOT CHANGE THIS
-\usepackage{courier}  % DO NOT CHANGE THIS
-\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
-\usepackage{graphicx} % DO NOT CHANGE THIS
-\urlstyle{rm} % DO NOT CHANGE THIS
-\def\UrlFont{\rm}  % DO NOT CHANGE THIS
-\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
-\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\frenchspacing  % DO NOT CHANGE THIS
-\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
-\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
-%\nocopyright
-%PDF Info Is REQUIRED.
-% For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
-% For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
-\pdfinfo{
-    /Title (Matching models for evacuation and allocation of people in case of disasters and wars)
-    /Author (Simone Bastasin, Simone Bortolin, Thomas Trevisan)
-    /TemplateVersion (2021.2)
-} %Leave this
-% /Title ()
-% Put your actual complete title (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case
-% Leave the space between \Title and the beginning parenthesis alone
-% /Author ()
-% Put your actual complete list of authors (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case.
-% Each author should be only by a comma. If the name contains accents, remove them. If there are any LaTeX commands,
-% remove them.
 
-% DISALLOWED PACKAGES
-% \usepackage{authblk} -- This package is specifically forbidden
-% \usepackage{balance} -- This package is specifically forbidden
-% \usepackage{color (if used in text)
-% \usepackage{CJK} -- This package is specifically forbidden
-% \usepackage{float} -- This package is specifically forbidden
-% \usepackage{flushend} -- This package is specifically forbidden
-% \usepackage{fontenc} -- This package is specifically forbidden
-% \usepackage{fullpage} -- This package is specifically forbidden
-% \usepackage{geometry} -- This package is specifically forbidden
-% \usepackage{grffile} -- This package is specifically forbidden
-% \usepackage{hyperref} -- This package is specifically forbidden
-% \usepackage{navigator} -- This package is specifically forbidden
-% (or any other package that embeds links such as navigator or hyperref)
-% \indentfirst} -- This package is specifically forbidden
-% \layout} -- This package is specifically forbidden
-% \multicol} -- This package is specifically forbidden
-% \nameref} -- This package is specifically forbidden
-% \usepackage{savetrees} -- This package is specifically forbidden
-% \usepackage{setspace} -- This package is specifically forbidden
-% \usepackage{stfloats} -- This package is specifically forbidden
-% \usepackage{tabu} -- This package is specifically forbidden
-% \usepackage{titlesec} -- This package is specifically forbidden
-% \usepackage{tocbibind} -- This package is specifically forbidden
-% \usepackage{ulem} -- This package is specifically forbidden
-% \usepackage{wrapfig} -- This package is specifically forbidden
-% DISALLOWED COMMANDS
-% \nocopyright -- Your paper will not be published if you use this command
-% \addtolength -- This command may not be used
-% \balance -- This command may not be used
-% \baselinestretch -- Your paper will not be published if you use this command
-% \clearpage -- No page breaks of any kind may be used for the final version of your paper
-% \columnsep -- This command may not be used
-% \newpage -- No page breaks of any kind may be used for the final version of your paper
-% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
-% \pagestyle -- This command may not be used
-% \tiny -- This is not an acceptable font size.
-% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
-% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
-
-\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
-
-% The file aaai21.sty is the style file for AAAI Press
-% proceedings, working notes, and technical reports.
-%
-
-% Title
-
-% Your title must be in mixed case, not sentence case.
-% That means all verbs (including short verbs like be, is, using,and go),
-% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
-% articles, conjunctions, and prepositions are lower case unless they
-% directly follow a colon or long dash
+\input{preamble}
 
 \title{Matching models for evacuation and allocation of people\\in case of disasters and wars}
 \author{
 %Authors
 % All authors must be in the same font size and format.
-    Written by Simone Bastasin, Simone Bortolin, Thomas Trevisan\textsuperscript{\rm 1}
+    Written by Simone Bastasin\textsuperscript{\rm 1}, Simone Bortolin\textsuperscript{\rm 1}, Thomas Trevisan\textsuperscript{\rm 1}
     \\
 }
 \affiliations{
-    \textsuperscript{\rm 1}Dipartimento di Ingegneria dell'informazione - Unipd \\
+    \textsuperscript{\rm 1}Dipartimento di Ingegneria dell'Informazione - Unipd \\
     Via Gradenigo 6, Padova, 35129, Italy \\
 
     simone.bastasin@studenti.unipd.it \\
@@ -110,16 +26,9 @@
     \maketitle
 
     \begin{abstract}
-        In this article we analyze an important case study in machine learning: matching models for evacuation and
-        allocation of people in case of disasters and wars. This case study was born mainly after two facts:
-        the Swiss State Secretariat for Migration recently announced a pilot project for a machine
-        learning-based assignment process for refugee resettlement~\citet{olbergml}.
-        And the increasing number of terroristic attacks have forced the main emergency lighting companies to produce
-        dynamic lamps that indicate which is the real emergency exit and not only the nearest one.
+        In this article we analyze an innovative case study in machine learning: matching models for evacuation and allocation of people in case of disasters and wars. This topic has been devised mainly because of two nowadays problems. First, as described by~\citet{olbergml}, the Swiss State Secretariat for Migration recently announced a pilot project for a machine learning-based assignment process for refugee resettlement. Second, the increasing number of terrorist attacks have forced main companies in the emergency lighting sector to produce dynamic lamps to indicate which is the most suitable emergency exit and not only the nearest one.
 
-        In the last period moreover due to the increase of natural catastrophes and to the war in Ukraine it becomes
-        more and more necessary to have matching models to manage in automatic way all these themes, that to the first
-        sight could be very untied between them, but in reality they are extremely tied and similar.
+        Moreover, in the last period, due to the increase of natural catastrophes and to the war in Ukraine it becomes even more necessary to have matching models that manage automatically  these kinds of problems. At first sight they might seem unrelated to each other but in reality they are extremely tied and similar.
     \end{abstract}
 
     \noindent%
@@ -129,101 +38,68 @@
     ~\citet{olbergml,basshuysen,delacretaz_2020}
 
     \subsubsection{Matching model for Asylum}\label{matching-model-for-asylum}%
-    ~\citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose implementing a College Admissions (CA)
-    model on the asylum market.
-    The model differs from the EU model~\citet{basshuysen} because it looks not only at the preferences of the states
-    that take people but also at the preferences of the refugees.
-    It can be said that it is a generalized EU model.
+    ~\citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose the implementation of a College Admissions (CA) model for the refugee resettlement matching problem.
+    The model differs from the EU model of~\citet{basshuysen} because it doesn't try to optimize only the employment success of a refugee in a certain state but it also takes into account refugees' preferences allowing a trade off between family welfare and overall employment success.
+    It can be considered as a generalized EU model.
 
-    According to the notations of~\citet{salles} formally, a CA-instance of a refugee-country matching problem is a
-    four-tuple \((C, R, q, P)\) (or if treated in a more realistic way, a 5-tuple \((C, R, q, P, F)\)), where
-    \(C = \{c_1, \dots, c_m\}\) and \(R = \{r_1, \dots,r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees,
-    respectively.
-    The agents of the market, definition that comes from game theory field, are \(a_k \in C\cup R\),
-    since it can be assumed that \(n \gg m\) it is also evident that it is a many-to-one matchings with an upper limit
-    on the many side.
-    The maximum number of refugees that can be matched to
-    each country is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
-    You can also dummy the quotas in this way:  \(q_j = n \quad  \forall c_j \in C\).
+    According also to the formally notation of~\citet{salles}, a CA-instance of a refugee-country matching problem is a 5-tuple $(C, R, q, P, F)$, where $C = \{c_1, \dots, c_m\}$ and $R = \{r_1, \dots, r_n\}$ are disjoint sets of $m$ countries and $n$ refugees, respectively.
 
-    Afterwards we have, \(P = \{P(c_1), \dots , P(c_m), P(r_1), \dots , P(r_n)\}\) is
-    a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each
-    country over the set of refugees and for each refugee over the set of countries.
-    Each preference \(P(r_i)\) contains a list of expressed preferences in the format
-    \( c _ { 1 } \succ_{r _ { i }} c _ { 2 } \),
-    and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
+    Since the distribution of asylum is modelled as a matching problem under preferences, refugees and countries offering asylum make up a two-sided market in which the members of one side are to be distributed over members of the other side.
+    So, we can define agents of the market as $a_k \in C \cup R$.
+    
+    Note that we are concerned with \textit{many-to-one matchings} since it can be assumed that $n \gg m$ and each refugee can obtain asylum in at most one country, whereas a given country can accept many refugees. The maximum number of refugees that can be matched to each country is determined by a vector of quotas $q = (q_j)_j \in \mathbb{N}^m$, $j\in\{1,...,m\}$. There may be no real quotas at all: setting $q_j = n \quad \forall c_j \in C$ makes them dummies.
 
-    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be
-    together (e.g. a family) in this case you should be careful to remove duplicate entries of the same people.
-    Also in this case there is a maximum limit to the number of people to keep in the same group.
-    We then introduce \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
-    In the following, for simplicity, we will consider \(l=n\) and \(F(f_i)=\{r_i\}\).
+    Afterwards, $P = \{P(c_1), \dots, P(c_m), P(r_1), \dots, P(r_n)\}$ is a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each country over the set of refugees and for each refugee over the set of countries.
+    Each preference $P(r_i)$ contains a list of expressed preferences in the format $c_1 \succ_{r_i} c_2$, and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
 
-    Countries may declare refugees unacceptable, and refugees may declare countries unacceptable,
-    hence, there is a subset \(E \subseteq R \times C \times F\) of acceptable refugee-country pairs.
-    In addition, there is the limitation on the amount of each individual tuple that is acceptable, as a refugee cannot
-    be split into two nations nor can one nation receive more than the maximum allowable quotas.
+    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be together (e.g. a family) and to do so let $F=\{F(f_1), \dots, F(f_l)\}$ be the list of the groups of refugees, where $l \leq n$ and $F(f_i) = \{r_a, r_b, \dots\}$.
+    In this case you should be careful to do not exceed the maximum limit to the number of people to keep in the same group and be careful to remove duplicate entries of the same people.
+    In the following, for simplicity, we will consider $l=n$ and $F(f_i)=\{r_i\}$.
 
-    Denote \( A \left( r _ { i } \right) = \left\{ c _ { j } \mid \left( r _ { i } , c _ { j } \right) \in E \right\} \)
-    the set of acceptable countries for a given \( r _ { i } \in R \); and equivalently for the countries.
-    An assignment \(M\) is a subset of \(E\) and contains the item \( a _ { k } \in R \cup C \).
-    Obviously a refugee \( r _ { i } \) can be unassigned so \( M \left( r _ { i } \right) = \emptyset \).
-    Similarly, a country \( c _ { j } \) is
-    under subscribed if \( \left| M \left( c _ { j } \right) \right| < q _ { j } \), and full if
-    \( \left| M \left( c _ { j } \right) \right| = q _ { j } \).
-    It is to remember that the assignment is valid if and only if:
-    \( \left| M \left( r _ { i } \right) \right| \leq 1 \) for all \( r _ { i } \in R ; \) and
-    \( \left| M \left( c _ { j } \right) \right| \leq q _ { j } \) for all \( c _ { j } \in C  \).
-
+    Countries may declare refugees unacceptable and refugees may declare countries unacceptable, hence, there is a subset $E \subseteq R \times C \times F$ of acceptable refugee-country pairs.
+    In addition, there is the limit on the amount of each individual tuple that is acceptable, because, as a refugee can't be split into two nations nor can one nation receive more than the maximum allowable quotas.
+    
+    Denote $A \left( r_i \right) = \left\{ c_j \mid \left( r_i, c_j \right) \in E \right\}$ the set of acceptable countries for a given $r_i \in R$, and equivalently for the countries.
+    
+    An assignment $M$ is a subset of $E$ and contains the item $a_k \in R \cup C$.
+    Obviously a refugee $r_i$ can be unassigned so $M \left( r_i \right) = \emptyset$.
+    Similarly, a country $c_j$ admits applications if $\left| M \left( c_j \right) \right| < q_j$, and it's full if $\left| M \left( c_j \right) \right| = q_j$.
+    Note that the assignment is valid if and only if $\left| M \left( r_i \right) \right| \leq 1$ $\forall r_i \in R$ and $\left| M \left( c_j \right) \right| \leq q_j$ $\forall c_j \in C$.
 
     \begin{table}[!htb]
         \begin{tabular}{c|c}
-            \hline Countries                                          & Refugees                                                   \\
-            \hline\( r_{1} \succ_{c_{1}} r_{2} \succ_{c_{1}} r_{3} \) & \( c_{2} \succ c_{1} \) for both \( r_{1} \) and \( r_{2} \) \\
-            \( r_{2} \succ_{c_{2}} r_{1} \succ_{c_{2}} r_{3} \)       & \( r_{3} \) declares only \( c_{2} \) acceptable           \\
+            \hline Countries & Refugees \\
+            \hline $r_1 \succ_{c_1} r_2 \succ_{c_1} r_3$ & $c_2 \succ c_1$ for both $r_1$ and $r_2$ \\
+            $r_2 \succ_{c_2} r_1 \succ_{c_2} r_3$ & $r_3$ declares only $c_2$ acceptable \\
             \hline
         \end{tabular}
-        \caption{Table specifying refugees and countries preferences for
-        the study case: there are three refugees, \( r _ { 1 } , r _ { 2 } , r _ { 3 } \), and two countries \( c _ { 1 } , c _ { 2 } \) with \( q _ { 1 } = 2 \) and \( q _ { 2 } = 1 \).
-        Where \( a \succ_{c} b \) denotes that \( c \) strictly prefers \( a \) to \( b \).}
+        \caption{Refugees and countries preferences example: refugees $r_1, r_2, r_3$; countries $c_1, c_2$ with $q_1 = 2$ and $q_2 = 1$. Notation $a \succ_c b$ denotes that $c$ strictly prefers $a$ to $b$.}
         \label{tab:countries-refugees}
     \end{table}
 
     \subsubsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
-    Almost every state has regulations for safety and construction of escape routes
-    (\citet{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), in general these
-    regulations can be summarized as: every 60\footnote{60 cm is the minimum size for a person to be
-    able to walk without crawling or anything else} cm of corridor/door/staircase can come out around 50-70
-    \footnote{In american regulations this number is always fixed at 60, in europe this number is more
-    variable, usually it is 50, but it can go up to 70 in places of education or offices closed to the public}
-    people, rounded to the nearest multiple of 60 cm.
+    Almost every state has regulations for safety on construction of escape routes (\citet{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), these regulations can usually be summarized as: from every 60 cm\footnote{60 cm is the minimum distance for a person to be able to walk without crawling or anything else} of corridor/staircase can come out around 50-70 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices}.
+    For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.
+    %Therefore, it can be rounded to the most intuitive integer number: 60 cm.
 
-    For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm
-    escape route can allow the exit of 50--70 people.
+    Another regulation is that from the middle of a room to the nearest emergency exit or to the nearest separate fire compartment there can be maximum 60 meters.
+    
+    These two combinations generate a matching model very similar and very correlated to the one for refugee resettlement.
 
-    Another regulation is that from the center of a room to the nearest emergency exit or separate
-    fire compartment there can be maximum 60 meters.
-    These two combinations generate a matching model
-    very similar and very correlated to that of Asylum.
+    A CA-instance of a people-exit matching problem is a 5-tuple $(E, P, q, N, F)$, where $E = \{e_1, \dots, e_m\}$ and $P = \{p_1, \dots, p_n\}$ are disjoint sets of $m$ fire exit and $n$ people.
+    % to revise ---
+    The agents of the market are $a_k \in P \subset E$, since it can be assumed that $n \ll m$ it is also evident that it is a many-to-one matching with an upper limit on the many side.
+    The maximum number of people that can be matched to each fire exit is determined by a vector of quotas $q = (q_j)_j \in \mathbb{N}^m$, $j\in {1,...,m}$.
+    You can also dummy the quotas in this way:  $q_j = n \forall c_j \in C$.
+    % ---
 
-    A CA-instance of a people-exit matching problem is a four-tuple \((E, P, q, N)\)
-    (or if treated in a more realistic way, a 5-tuple \((E, P, q, N, F)\)), where
-    \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots,p_n\}\) are disjoint sets of \(m\) fire exit and \(n\) people.
-    The agents of the market are \(a_k \in P\subset E\), since it can be assumed that \(n \ll m\) it is also evident
-    that it is a many-to-one matching with an upper limit  on the many side.
-    The maximum number of people that can be matched to
-    each fire exit is determined by a vector of quotas \(q = (q_j)_{j\in {1,...,m}} \in \mathbb{N}^m\).
-    You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
+    Similarly to the matching model for asylum, let $N = \{N(e_1), \dots, N(e_m), N(p_1), \dots, N(p_n)\}$ be the set of the nearest exit lists.
+    Each nearest exit list $N(p_i)$ contains a list of expressed preferences in the format $e_1 \succ_{p_i} e_2$, and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
 
-    Similarly to before we have, \(N = \{N(e_1), \dots , N(e_m), N(p_1), \dots , N(p_n)\}\) is
-    a set of the nearest exit lists.
-    Each nearest exit list \(N(p_i)\) contains a list of expressed preferences in the format
-    \( e _ { 1 } \succ_{p _ { i }} e _ { 2 } \), and equivalently for exits' preferences (an example is illustrated in
-    Table~\ref{tab:people-exit}).
-
-    Also in the case of evacuation of people, there is one last element to consider a list of people who must be
-    together (e.g. a family): \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
-    In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
+    Also in the case of people evacuation, another element to consider is the list of people who must be together (e.g. a family): $F=\{F(f_1), \dots, F(f_l)\}$ where $l\leq n$ and $F(f_i) = \{r_a, r_b, \dots\}$.
+    In the following, for simplicity, we will consider that $l=n$ and that $F(f_i)=\{r_i\}$.
+    
+    % simonebastasin ha modificato fino a qui
 
     Fire exit may declare people unacceptable, and people may declare fire exit unacceptable,
     hence, there is a subset \(C \subseteq E \times P \times F\) of acceptable people-exit pairs.
