@@ -1,0 +1,103 @@
+\subsection{Mechanisms}\label{mechanisms}
+
+\subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}~\citet{basshuysen}
+
+    % da ~\citet{basshuysen} parlare del motivo per cui non va bene questo problema
+
+    \subsubsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}~\citet{basshuysen}
+
+    % da ~\citet{basshuysen} parlare di quando è stato sviluppato il problema, di come si analizza
+
+    % di cosa cambia tra la vecchia \(P\) ed le nuove
+    \(\mathbf { P }= \{P(r_1), \dots, P(r_n)\}\)
+    \(\mathbf { Pri } = \{Pri(c_1), \dots, Pro(c_m)\}\)
+    5-tuple \( ( R , C , q , \mathbf { P } , \mathbf { Pri } ) \)
+    % il resto della definizione è identico alla precedente
+
+    \subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
+
+    % in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
+
+    To address this issue, we propose two mechanisms that build on the machine learning-based approach by~\citet{bansak_2018} the constrained random serial dictatorship mechanism
+    (CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml} %continua in \citet{olbergml}
+
+    \begin{algorithm}
+        \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
+        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+        \KwResult{\(\mu\)}
+        \SetKw{Break}{break}
+        \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
+
+        Compute the objective value \( z ^ { * } \) of an optimal solution to:
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+
+        \( Q \leftarrow F \).
+
+        \While{\( Q \neq \emptyset \)}{
+            Remove randomly chosen \( i \in Q \) from \( Q \).
+
+            \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
+                \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
+
+                Solve
+                \[\tiny
+                    \begin{aligned}
+                        \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                        \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                        & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                        & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                        & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+                    \end{aligned}
+                \]%
+
+                and let \( z ^ { \prime } \) denote the objective value of the solution.
+
+                \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
+                    \( \mu ( i ) \leftarrow j \)
+                    \Break
+                }
+            }
+        }
+    \end{algorithm}
+
+    \begin{algorithm}
+        \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
+        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+        \KwResult{\(\mu\)}
+        Compute the objective value \( z \left( \mu ^ { * } \right) \) of an optimal solution to
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+        Let \( \mu \) denote the matching induced by the solution of
+        \[\tiny
+            \begin{aligned}
+                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\
+                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\
+                & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \gamma \\
+                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \end{aligned}
+        \]%
+        with \( \gamma = \alpha z \left( \mu ^ { * } \right) \).
+    \end{algorithm}
+
+    \subsubsection{Compliance with Ethical Principles}\label{compliance-with-ethical-principles}~\citet{basshuysen}
+
+    ethicality in the case of the use of algorithms such as machine learning and error learning
+
+    the use of machine learning algorithms is ethically flawed in all cases where the salvation of people is associated
+    with a Bayesian algorithm since it is a probability that decides the salvation or death of people.
