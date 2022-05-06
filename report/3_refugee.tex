@@ -1,0 +1,48 @@
+\subsubsection{Matching model for Asylum}\label{matching-model-for-asylum}%
+    \citet{olbergml,basshuysen,delacretaz_2020,fernandez} propose the implementation of a College Admissions (CA) model for the refugee resettlement matching problem.
+    The model differs from the EU model of \citet{basshuysen} because it doesn't try to optimize only the employment success of a refugee in a certain state but it also takes into account refugees' preferences allowing a trade off between family welfare and overall employment success.
+    It can be considered as a generalized EU model.
+
+    According also to the formally notation of \citet{salles}, a CA-instance of a refugee-country matching problem is a 5-tuple \((C, R, q, P, F)\), where \(C = \{c_1, \dots, c_m\}\) and \(R = \{r_1, \dots, r_n\}\) are disjoint sets of \(m\) countries and \(n\) refugees, respectively.
+
+    Since the distribution of asylum is modelled as a matching problem under preferences, refugees and countries offering asylum make up a two-sided market in which the members of one side are to be distributed over members of the other side.
+    So, we can define agents of the market as \(a_k \in C \cup R\).
+    
+    Note that we are concerned with \textit{many-to-one matchings} since it can be assumed that \(n \gg m\) and each refugee can obtain asylum in at most one country, whereas a given country can accept many refugees. The maximum number of refugees that can be matched to each country is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m \quad j\in\{1,\dots ,m\}\). There may be no real quotas at all: setting \(q_j = n \quad \forall c_j \in C\) makes them dummies.
+
+    Afterwards, \(P = \{P(c_1), \dots, P(c_m), P(r_1), \dots, P(r_n)\}\) is a set of preference lists which induces a complete, transitive, and irreflexive preference profile for each country over the set of refugees and for each refugee over the set of countries.
+    Each preference \(P(r_i)\) contains a list of expressed preferences in the format \(c_1 \succ_{r_i} c_2\), and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
+
+    In the particular case of refugees' allocation, there is one last element to consider: a list of people who must be together (e.g. a family) and to do so let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of the groups of refugees, where \(l \leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
+    In this case you should be careful to do not exceed the maximum limit to the number of people to keep in the same group and be careful to remove duplicate entries of the same people.
+    In the following, for simplicity, we will consider \(l=n\) and \(F(f_i)=\{r_i\}\).
+
+    Countries may declare refugees unacceptable and refugees may declare countries unacceptable, hence, there is a subset \(E \subseteq R \times C \times F\) of acceptable refugee-country pairs.
+    In addition, there is the limit on the amount of each individual tuple that is acceptable, because, as a refugee can't be split into two nations nor can one nation receive more than the maximum allowable quotas.
+    
+    Denote \(A \left( r_i \right) = \left\{ c_j \mid \left( r_i, c_j \right) \in E \right\}\) the set of acceptable countries for a given \(r_i \in R\), and equivalently for the countries.
+    
+    An assignment \(M\) is a subset of \(E\) and contains the item \(a_k \in R \cup C\).
+    Obviously a refugee \(r_i\) can be unassigned so \(M \left( r_i \right) = \emptyset\).
+    Similarly, a country \(c_j\) admits applications if \(\left| M \left( c_j \right) \right| < q_j\), and it's full if \(\left| M \left( c_j \right) \right| = q_j\).
+    Note that the assignment is valid if and only if \(\left| M \left( r_i \right) \right| \leq 1 \forall r_i \in R\) and \(\left| M \left( c_j \right) \right| \leq q_j \forall c_j \in C\)
+
+    \begin{table}[!htb]
+        \begin{tabular}{c|c}
+            \hline Countries & Refugees \\
+            \hline \(r_1 \succ_{c_1} r_2 \succ_{c_1} r_3\) & \(c_2 \succ c_1\) for both \(r_1\) and \(r_2\) \\
+            \(r_2 \succ_{c_2} r_1 \succ_{c_2} r_3\) & \(r_3\) declares only \(c_2\) acceptable \\
+            \hline
+        \end{tabular}
+        \caption{Refugees and countries preferences example: refugees \(r_1, r_2, r_3\); countries \(c_1, c_2\) with \(q_1 = 2\) and \(q_2 = 1\). Notation \(a \succ_c b\) denotes that \(c\) strictly prefers \(a\) to \(b\).}
+        \label{tab:countries-refugees}
+    \end{table}
+
+    \begin{figure}[!htb] % TODO simonebastasin controlla la caption
+        \def\svgwidth{\columnwidth}
+        \subfile{media/complete_matching.pdf_tex}
+        \caption{Matching in a market with two-dimensional constraints. There are five families
+            \(f_1, \dots, f_5\), two localities \(c_1, c_2\), and two dimensions, represented by the left and right columns.
+            The sizes of the families are \((3, 0), (1, 0), (1, 1), (1, 2)\), and \((2, 1)\)}
+        \label{fig:complete_matching}
+    \end{figure}

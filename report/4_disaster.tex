@@ -1,0 +1,57 @@
+\subsubsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
+    Almost every state has regulations for safety on construction of escape routes (\citet{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989,cee-567-1977}), these regulations can usually be summarized as: from every 60 cm\footnote{60 cm is the minimum distance for a person to be able to walk without crawling or anything else} of corridor/staircase can come out around 50-70 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices}.
+    For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.
+    %Therefore, it can be rounded to the most intuitive integer number: 60 cm.
+
+    Another regulation is that from the middle of a room to the nearest emergency exit or to the nearest separate fire compartment there can be maximum 60 meters.
+    
+    These two combinations generate a matching model very similar and very correlated to the one for refugee resettlement.
+
+    A CA-instance of a people-exit matching problem is a 5-tuple \((E, P, q, N, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) fire exit and \(n\) people.
+    % to revise ---
+    The agents of the market are \(a_k \in P \subset E\), since it can be assumed that \(n \ll m\) it is also evident that it is a many-to-one matching with an upper limit on the many side.
+    The maximum number of people that can be matched to each fire exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,...,m}\).
+    You can also dummy the quotas in this way:  \(q_j = n \forall c_j \in C\).
+    % ---
+
+    Similarly to the matching model for asylum, let \(N = \{N(e_1), \dots, N(e_m), N(p_1), \dots, N(p_n)\}\) be the set of the nearest exit lists.
+    Each nearest exit list \(N(p_i)\) contains a list of expressed preferences in the format \(e_1 \succ_{p_i} e_2\), and equivalently for exits' preferences (an example is illustrated in Table~\ref{tab:people-exit}).
+
+    Also in the case of people evacuation, another element to consider is the list of people who must be together (e.g. a family): \(F=\{F(f_1), \dots, F(f_l)\}\) where \(l\leq n\) and \(F(f_i) = \{r_a, r_b, \dots\}\).
+    In the following, for simplicity, we will consider that \(l=n\) and that \(F(f_i)=\{r_i\}\).
+    
+    % simonebastasin ha modificato fino a qui
+
+    Fire exit may declare people unacceptable, and people may declare fire exit unacceptable,
+    hence, there is a subset \(C \subseteq E \times P \times F\) of acceptable people-exit pairs.
+    In addition, there is the limitation on the amount of each individual tuple that is acceptable, as a people
+    cannot be split into two fire exit nor can one fire exit receive more than the maximum allowable quotas.
+
+    Denote \( A \left( e _ { i } \right) = \left\{ p _ { j } \mid \left( e _ { i } , p _ { j } \right) \in C \right\} \)
+    the set of acceptable people for a given \( e _ { i } \in E \); and equivalently for the people.
+    An assignment \(M\) is a subset of \(C\) and contains the item \( a _ { k } \in E \cup P \).
+    In the case of a disaster every person should be able to evacuate, so  \( p _ { i } \) can be unassigned and
+    \( M \left( p _ { i } \right) \neq \emptyset \) although it is possible that for some reason that exit is impracticable.
+    Just for this reason it is possible to realize models in which you have \(|M \left( e _ { i } \right)| \geq 1\)
+    i.e. assign to each user a second emergency exit, so that if the first is impracticable the second can be used.
+    This strategy is to be avoided, and it is better to have a system of detection of impassable exits.
+    We omit the analysis of these models.
+    Similarly, an exit \( e _ { j } \) is  under subscribed if
+    \( \left| M \left( e _ { j } \right) \right| < q _ { j } \), and full if
+    \( \left| M \left( e _ { j } \right) \right| = q _ { j } \).
+    It is to remember that the assignment is valid if and only if:
+    \( \left| M \left( p _ { i } \right) \right| = 1 \) for all \( p _ { i } \in P ; \) and
+    \( \left| M \left( e _ { j } \right) \right| \leq q _ { j } \) for all \( e _ { j } \in E  \).
+
+    \begin{table}[!htb]
+        \begin{tabular}{c|c}
+            \hline People                                             & Exit                                                       \\
+            \hline\( p_{1} \succ_{e_{1}} p_{2} \succ_{e_{1}} p_{3} \) & \( e_{2} \succ e_{1} \) for both \( p_{1} \) and \( p_{2} \) \\
+            \( p_{2} \succ_{e_{2}} p_{1} \succ_{e_{2}} p_{3} \)       & \( p_{3} \) declares only \( e_{2} \) within 60 mt         \\
+            \hline
+        \end{tabular}
+        \caption{Table specifying people and exit preferences for
+            the study case: there are three people, \( p _ { 1 } , p _ { 2 } , p _ { 3 } \), and two fire exit
+            \( e _ { 1 } , e _ { 2 } \) with \( q _ { 1 } = 2 \) and \( q _ { 2 } = 1 \).}
+        \label{tab:people-exit}
+    \end{table}

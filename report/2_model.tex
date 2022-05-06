@@ -1,0 +1,40 @@
+\subsection{Matching model under preferences}\label{matching-model-under-preferences}%
+
+Matching under preferences is a tool from cooperative game theory. It can be applied to two-sided
+markets in which heterogeneous agents, or goods, of one side are to be distributed over agents or
+goods of the other side of the market, and the satisfaction of agents’ preferences, or respect for agents’
+priorities, matter. Gale and Shapley laid the theoretical foundations for the theory.
+Matching markets with sizes arise in a variety of contexts and in its simplest model, agents have ordinal preferences over objects that are available in multiple identical units. For each object, agents
+are ranked according to exogenous priorities. Agents can have a size of either one or two:
+single-unit agents require one unit of an object and double-unit agents require two units of the
+same object. The model can be extended in various ways to fit specific applications in the following ways:
+\begin{itemize}
+    \item constraints may take place over several dimensions
+    \item agents may have preferences over both an object and a number of
+    units
+    \item agents may desire units of different objects
+\end{itemize}
+An agent and an object form a blocking pair of a
+given matching if the agent prefers the object to his own and at least the number of units he requires are either unassigned or assigned to agents with a lower priority.
+Stability, initially introduced by Gale and Shapley in 1962, is a central concept in matching theory. A matching
+is stable if it does not have any blocking pair. In two-sided matching markets, with
+strategic agents on both sides, stability constitutes an essential equilibrium criterion, thus an unstable matching is not at equilibrium. A blocking pair
+is unfair in the sense that the agent is not able to get an object even though he has a high enough priority.
+\begin{figure}[!htb]
+    \def\svgwidth{\columnwidth}
+    \subfile{media/matching.pdf_tex}
+    \caption{Logical relationships among our solution concepts}
+    \label{fig:matching}
+\end{figure}
+
+%~\citet{olbergml,basshuysen,delacretaz_2020}
+% TODO riassunto sul Matching model  e citare quelli sopra
+% in particolare parlare di
+%1) Weakly Envy-free
+%2) Envy-Free
+%3) Stable
+%4) Non-Wasteful
+% sono spiegati quì
+%http://t8el.com/wp-content/uploads/2019/12/DKT-MMRR-Dec2019.pdf
+% e per citarlo \citet{delacretaz_2019} senza () e \cite{delacretaz_2019} con ()
+% citare l'immagine con \ref{fig:matching}
