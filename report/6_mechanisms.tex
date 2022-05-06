@@ -43,16 +43,15 @@ To address this issue, we propose two mechanisms that build on the machine learn
     \SetKw{Break}{break}
     \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
 
-    Compute the objective value \( z ^ { * } \) of an optimal solution to:
-    \[\tiny
+    \(\tiny
         \begin{aligned}
-            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+            z ^ * \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
+            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
+            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
             & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
         \end{aligned}
-    \]%
+    \)%
 
     \( Q \leftarrow F \).
 
@@ -62,18 +61,15 @@ To address this issue, we propose two mechanisms that build on the machine learn
         \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
             \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
 
-            Solve
-            \[\tiny
+            \(\tiny
                 \begin{aligned}
-                    \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-                    \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-                    & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-                    & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                    z ^ { \prime } \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
+                    \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
+                    & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
+                    & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
                     & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
                 \end{aligned}
-            \]%
-
-            and let \( z ^ { \prime } \) denote the objective value of the solution.
+            \)%
 
             \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
                 \( \mu ( i ) \leftarrow j \)
@@ -87,26 +83,25 @@ To address this issue, we propose two mechanisms that build on the machine learn
     \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
     \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
     \KwResult{\(\mu\)}
-    Compute the objective value \( z \left( \mu ^ { * } \right) \) of an optimal solution to
-    \[\tiny
+    \(\tiny
         \begin{aligned}
-            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+            z \left( \mu ^ { * } \right) \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
+            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
+            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
             & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
         \end{aligned}
-    \]%
-    Let \( \mu \) denote the matching induced by the solution of
-    \[\tiny
+    \)%
+
+    \(\tiny
         \begin{aligned}
-            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-            & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\
-            & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \gamma \\
+            \mu \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
+            & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\[-1mm]
+            & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \alpha z \left( \mu ^ { * } \right) \\[-1mm]
             & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
         \end{aligned}
-    \]%
-    with \( \gamma = \alpha z \left( \mu ^ { * } \right) \).
+    \)%
+
 \end{algorithm}
 
