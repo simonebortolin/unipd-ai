@@ -1,103 +1,112 @@
 \subsection{Mechanisms}\label{mechanisms}
 
-\subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}~\citet{basshuysen}
+\subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}
+A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{ P_c, P_r\}\) and \(F\) is omitted.
+And a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{ N_e ,  N_p\}\) and \(F\) is omitted.
 
-    % da ~\citet{basshuysen} parlare del motivo per cui non va bene questo problema
+We can now turn to the desiderata encountered in the previous section.
+It will be argued that the desideratum that preferences be satisfied “as much as possible” amounts to stability in the CA
+model.
+We shall first define this property and introduce an algorithm that produces matching that satisfy the stability~\cite{basshuysen}.
 
-    \subsubsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}~\citet{basshuysen}
+The CA model meets the requirements of Stability and maximum cardinality however.
+For the case study of asylum, even if the requirement of no rights violation is met and a modified CA model adopted in which “everyone finds everyone acceptable”, this is not really true: because the system should ban the possibility of “incorrect use of preferences”.
+An “incorrect use of preferences” is an expression of preferences which are in conflict with system compliance (COM): higher-order policy goals or ethical principles
+This happens because countries can express indirect preferences that can discriminate, this for example happens by requiring language skills.
+Compliance is also violated if agents can “game the system”~\cite{basshuysen}.
 
-    % da ~\citet{basshuysen} parlare di quando è stato sviluppato il problema, di come si analizza
+\subsubsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}
+A SC model can be attained from the CA model by restricting the set of preference lists to the refugees, and defining priority lists for the countries.
+Thus, an SC instance of a refugee-country matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \ldots Pri(c_m)\}\) is the set of countries’ priority lists containing the same data as \(P_c\).
+The rest of the definition is the same as the general model and the CA model.
 
-    % di cosa cambia tra la vecchia \(P\) ed le nuove
-    \(\mathbf { P }= \{P(r_1), \dots, P(r_n)\}\)
-    \(\mathbf { Pri } = \{Pri(c_1), \dots, Pro(c_m)\}\)
-    5-tuple \( ( R , C , q , \mathbf { P } , \mathbf { Pri } ) \)
-    % il resto della definizione è identico alla precedente
+Priority rankings are usually generated through a point system.
+If two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors.
+In the context  of the refugee match, it seems plausible to give a refugee who has been waiting longer for transfer  more points in all countries’ rankings than to a refugee with less waiting time spent, other things being  equal;
+so waiting time since registration in the system could be used as a continuous variable to break non-strict priorities~\cite{basshuysen}.
 
-    \subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
+The SC model respects the requirements of Stability and maximum cardinality and COM in that it does not allow the inclusion of requirements contrary to the higher-order policy goals or ethical principles~\cite{basshuysen}.
 
-    % in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
+\subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
 
-    To address this issue, we propose two mechanisms that build on the machine learning-based approach by~\citet{bansak_2018} the constrained random serial dictatorship mechanism
-    (CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml} %continua in \citet{olbergml}
+To address this issue, we propose two mechanisms that build on the machine learning-based approach by~\citet{bansak_2018} the constrained random serial dictatorship mechanism
+(CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml}.
 
-    \begin{algorithm}
-        \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
-        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
-        \KwResult{\(\mu\)}
-        \SetKw{Break}{break}
-        \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
+% in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
 
-        Compute the objective value \( z ^ { * } \) of an optimal solution to:
-        \[\tiny
-            \begin{aligned}
-                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
-                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
-            \end{aligned}
-        \]%
+ %continua in \citet{olbergml}
 
-        \( Q \leftarrow F \).
+\begin{algorithm}
+    \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
+    \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+    \KwResult{\(\mu\)}
+    \SetKw{Break}{break}
+    \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
 
-        \While{\( Q \neq \emptyset \)}{
-            Remove randomly chosen \( i \in Q \) from \( Q \).
+    Compute the objective value \( z ^ { * } \) of an optimal solution to:
+    \[\tiny
+        \begin{aligned}
+            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+        \end{aligned}
+    \]%
 
-            \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
-                \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
+    \( Q \leftarrow F \).
 
-                Solve
-                \[\tiny
-                    \begin{aligned}
-                        \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-                        \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-                        & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-                        & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
-                        & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
-                    \end{aligned}
-                \]%
+    \While{\( Q \neq \emptyset \)}{
+        Remove randomly chosen \( i \in Q \) from \( Q \).
 
-                and let \( z ^ { \prime } \) denote the objective value of the solution.
+        \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
+            \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
 
-                \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
-                    \( \mu ( i ) \leftarrow j \)
-                    \Break
-                }
+            Solve
+            \[\tiny
+                \begin{aligned}
+                    \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+                    \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+                    & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+                    & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+                    & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+                \end{aligned}
+            \]%
+
+            and let \( z ^ { \prime } \) denote the objective value of the solution.
+
+            \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
+                \( \mu ( i ) \leftarrow j \)
+                \Break
             }
         }
-    \end{algorithm}
+    }
+\end{algorithm}
 
-    \begin{algorithm}
-        \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
-        \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
-        \KwResult{\(\mu\)}
-        Compute the objective value \( z \left( \mu ^ { * } \right) \) of an optimal solution to
-        \[\tiny
-            \begin{aligned}
-                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
-                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-                & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
-                & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
-                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
-            \end{aligned}
-        \]%
-        Let \( \mu \) denote the matching induced by the solution of
-        \[\tiny
-            \begin{aligned}
-                \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\
-                \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
-                & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\
-                & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \gamma \\
-                & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
-            \end{aligned}
-        \]%
-        with \( \gamma = \alpha z \left( \mu ^ { * } \right) \).
-    \end{algorithm}
+\begin{algorithm}
+    \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
+    \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+    \KwResult{\(\mu\)}
+    Compute the objective value \( z \left( \mu ^ { * } \right) \) of an optimal solution to
+    \[\tiny
+        \begin{aligned}
+            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\
+            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\
+            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+        \end{aligned}
+    \]%
+    Let \( \mu \) denote the matching induced by the solution of
+    \[\tiny
+        \begin{aligned}
+            \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\
+            & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\
+            & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \gamma \\
+            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+        \end{aligned}
+    \]%
+    with \( \gamma = \alpha z \left( \mu ^ { * } \right) \).
+\end{algorithm}
 
-    \subsubsection{Compliance with Ethical Principles}\label{compliance-with-ethical-principles}~\citet{basshuysen}
-
-    ethicality in the case of the use of algorithms such as machine learning and error learning
-
-    the use of machine learning algorithms is ethically flawed in all cases where the salvation of people is associated
-    with a Bayesian algorithm since it is a probability that decides the salvation or death of people.
