@@ -2,16 +2,15 @@
 
 \subsubsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}
 A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{ P_c, P_r\}\) and \(F\) is omitted.
-And a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{ N_e ,  N_p\}\) and \(F\) is omitted.
+Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{ N_e ,  N_p\}\) and \(F\) is omitted.
 
 We can now turn to the desiderata encountered in the previous section.
 It will be argued that the desideratum that preferences be satisfied “as much as possible” amounts to stability in the CA
 model.
-We shall first define this property and introduce an algorithm that produces matching that satisfy the stability~\cite{basshuysen}.
+We shall first define this property and introduce an algorithm that produces a stable matching~\cite{basshuysen}.
 
-The CA model meets the requirements of Stability and maximum cardinality however.
-For the case study of asylum, even if the requirement of no rights violation is met and a modified CA model adopted in which “everyone finds everyone acceptable”, this is not really true: because the system should ban the possibility of “incorrect use of preferences”.
-An “incorrect use of preferences” is an expression of preferences which are in conflict with system compliance (COM): higher-order policy goals or ethical principles
+The CA model meets the requirements of stability and maximum cardinality, but for the case study of asylum, even if the requirement of no rights violation is met and it is adopted a modified CA model in which “everyone finds everyone acceptable”, there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences”.
+An “incorrect use of preferences” is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles.
 This happens because countries can express indirect preferences that can discriminate, this for example happens by requiring language skills.
 Compliance is also violated if agents can “game the system”~\cite{basshuysen}.
 
@@ -20,8 +19,7 @@ A SC model can be attained from the CA model by restricting the set of preferenc
 Thus, an SC instance of a refugee-country matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \ldots Pri(c_m)\}\) is the set of countries’ priority lists containing the same data as \(P_c\).
 The rest of the definition is the same as the general model and the CA model.
 
-Priority rankings are usually generated through a point system.
-If two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors.
+Priority rankings are usually generated through a point system: if two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors.
 In the context  of the refugee match, it seems plausible to give a refugee who has been waiting longer for transfer  more points in all countries’ rankings than to a refugee with less waiting time spent, other things being  equal;
 so waiting time since registration in the system could be used as a continuous variable to break non-strict priorities~\cite{basshuysen}.
 
@@ -29,7 +27,7 @@ The SC model respects the requirements of Stability and maximum cardinality and 
 
 \subsubsection{Machine learning-based Matching}\label{machine-learning-based-matching}~\citet{olbergml}
 
-To address this issue, we propose two mechanisms that build on the machine learning-based approach by~\citet{bansak_2018} the constrained random serial dictatorship mechanism
+To address this issue, we propose two mechanisms built on the machine learning-based approach by~\citet{bansak_2018}: the constrained random serial dictatorship mechanism
 (CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml}.
 
 % in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
