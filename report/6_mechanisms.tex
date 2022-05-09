@@ -41,18 +41,18 @@ To address this issue, we propose two mechanisms built on the machine learning-b
 
 \begin{algorithm}
     \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
-    \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+    \KwData{\( F , C , P_r , \pi , b , \alpha \)}
     \KwResult{\(\mu\)}
     \SetKw{Break}{break}
     \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
 
     \(\tiny
         \begin{aligned}
-            z ^ * \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
-            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
-            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
-            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            z ^ * \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
+            & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
+            & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
+            & a_{i j} \in\{0,1\} & \forall i \in F, \forall j \in C
         \end{aligned}
     \)%
 
@@ -66,11 +66,11 @@ To address this issue, we propose two mechanisms built on the machine learning-b
 
             \(\tiny
                 \begin{aligned}
-                    z ^ { \prime } \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
-                    \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
-                    & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
-                    & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
-                    & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+                    z ^ { \prime } \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+                    \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
+                    & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
+                    & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
+                    & a_{i j} \in\{0,1\} & \forall i \in F, \forall j \in C
                 \end{aligned}
             \)%
 
@@ -84,25 +84,25 @@ To address this issue, we propose two mechanisms built on the machine learning-b
 
 \begin{algorithm}
     \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
-    \KwData{\( F , L , \succeq , \pi , b , \alpha \)}
+    \KwData{\( F , C , P_r , \pi , b , \alpha \)}
     \KwResult{\(\mu\)}
     \(\tiny
         \begin{aligned}
-            z \left( \mu ^ { * } \right) \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \\[-1mm]
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
-            & \sum_{j \in L} x_{i j}=1 & x_{i \mu(i)}=1 \\[-1mm]
-            & x_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
-            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            z \left( \mu ^ { * } \right) \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
+            & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
+            & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
+            & a_{i j} \in\{0,1\} & \forall i \in F, \forall j \in C
         \end{aligned}
     \)%
 
     \(\tiny
         \begin{aligned}
-            \mu \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in L} v\left(\succeq_{i j}\right) x_{i j} \\[-1mm]
-            \operatorname {subject}\operatorname{to} & \sum_{i \in F} x_{i j}=q_{j} & \forall j \in L \\[-1mm]
-            & \sum_{j \in L} x_{i j}=1 & \forall i \in F \\[-1mm]
-            & \sum_{i \in F} \sum_{j \in L} \pi_{i j} x_{i j} \geq \alpha z \left( \mu ^ { * } \right) \\[-1mm]
-            & x_{i j} \in\{0,1\} & \forall i \in F, \forall j \in L
+            \mu \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} v\left(P_r(r_i)_j\right) a_{i j} \\[-1mm]
+            \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
+            & \sum_{j \in L} a_{i j}=1 & \forall i \in F \\[-1mm]
+            & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \geq \alpha z \left( \mu ^ { * } \right) \\[-1mm]
+            & a_{i j} \in\{0,1\} & \forall i \in F, \forall j \in C
         \end{aligned}
     \)%
 
