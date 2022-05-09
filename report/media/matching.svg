@@ -9,7 +9,7 @@
    height="59.19561"
    viewBox="0 0 264.83872 59.19561"
    sodipodi:docname="matching.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -36,11 +36,11 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="4"
-     inkscape:cx="195.375"
+     inkscape:cx="84.25"
      inkscape:cy="46.875"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
-     inkscape:window-x="2551"
+     inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="g15" /><g
@@ -58,7 +58,7 @@
        style="fill:none;stroke:#0000ff;stroke-width:0.201442;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="path35" /><path
        id="path47"
-       style="fill:none;stroke:#000000;stroke-width:0.201442;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:1.10175003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        d="m 311.42919,702.56757 c -17.18757,-2.9197 -28.52198,-7.91075 -28.52198,-13.58007 0,-5.66932 11.33441,-10.66036 28.52198,-13.58007 24.96781,0.0285 45.18017,6.09676 45.18017,13.58007 0,7.48332 -20.21236,13.55155 -45.18017,13.58007 z" /><text
        transform="scale(1,-1)"
        style="font-variant:normal;font-weight:normal;font-size:10.9091px;font-family:CMCSC10;-inkscape-font-specification:CMCSC10;writing-mode:lr-tb;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -86,7 +86,7 @@
          x="311.29901"
          y="-685.77802"
          sodipodi:role="line"
-         id="tspan101">Stable</tspan></text><text
+         id="tspan101">\textbf{Stable}</tspan></text><text
        transform="scale(1,-1)"
        style="font-variant:normal;font-weight:normal;font-size:10.9091px;font-family:CMCSC10;-inkscape-font-specification:CMCSC10;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="text119"

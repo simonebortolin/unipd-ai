@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20), www.inkscape.org
+%% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'matching.pdf' (pdf, eps, ps)
 %%
@@ -48,7 +48,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{matching.pdf}}%
     \put(0.01156184,0.18151968){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Weakly Envy-free\end{tabular}}}}%
     \put(0.15386735,0.06640073){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Envy-Free\end{tabular}}}}%
-    \put(0.50022663,0.06640073){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Stable\end{tabular}}}}%
+    \put(0.50022663,0.06640073){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Stable}\end{tabular}}}}%
     \put(0.57036731,0.18151968){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Non-Wasteful\end{tabular}}}}%
   \end{picture}%
 \endgroup%
