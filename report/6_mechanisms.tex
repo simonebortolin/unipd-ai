@@ -4,7 +4,7 @@
 \subsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}%
 
 A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{P_c, P_r\}\) and \(F\) is omitted.
-Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\) and \(F\) is omitted.
+Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\).
 
 We can now turn to the desiderata encountered in the previous section.
 It will be argued that the desideratum that preferences be satisfied “as much as possible" amounts to stability in the CA
@@ -39,12 +39,15 @@ Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in
 
 A CRSD instance \(\hat {I} = (F, L, q, \pi, P, \gamma)\). The instance return \(\mu : F \rightarrow C \cup \{\emptyset\}\).
 The general idea of CRSD is to let a family choose their match only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
-The constrained random serial dictatorship (CRSD) mechanism~\citet{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
-Algorithm is illustrated the~\ref{alg:crsd}.
+The constrained random serial dictatorship (CRSD) mechanism~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
+Code of CRSD is illustrated the algorithm~\ref{alg:crsd}.
 
 Constrained rank value (CRV) mechanism it is a variant of the CRSD one that uses a rank function.
-It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function express ranks assigning a values between 0 and 1 to positions in preference orders that is monotonically decreasing.
-Algorithm is illustrated the~\ref{alg:crv}~\citet{olbergml}.
+It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function express ranks assigning a values between 0 and 1 to positions in preference orders that is monotonically decreasing~\cite{olbergml}.
+Code of CRV is illustrated the algorithm~\ref{alg:crv}.
+
+The \(\pi\)-machine learning is Admissible for COM because is algorithm to calculate a value starting from another value and even if it is wrong it does not cause loss of life.
+
 
 \begin{algorithm}
     \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
