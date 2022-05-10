@@ -7,14 +7,14 @@ A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\
 Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\) and \(F\) is omitted.
 
 We can now turn to the desiderata encountered in the previous section.
-It will be argued that the desideratum that preferences be satisfied “as much as possible” amounts to stability in the CA
+It will be argued that the desideratum that preferences be satisfied “as much as possible" amounts to stability in the CA
 model.
 We shall first define this property and introduce an algorithm that produces a stable matching~\cite{basshuysen}.
 
-The CA model meets the requirements of stability and maximum cardinality, but for the case study of asylum, even if the requirement of no rights violation is met and it is adopted a modified CA model in which “everyone finds everyone acceptable”, there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences”.
-An “incorrect use of preferences” is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles.
+The CA model meets the requirements of stability and maximum cardinality, but for the case study of asylum, even if the requirement of no rights violation is met and it is adopted a modified CA model in which “everyone finds everyone acceptable", there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences".
+An “incorrect use of preferences" is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles.
 This happens because countries can express indirect preferences that can discriminate, this for example happens by requiring language skills.
-Compliance is also violated if agents can “game the system”~\cite{basshuysen}.
+Compliance is also violated if agents can “game the system"~\cite{basshuysen}.
 
 
 \subsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}%
@@ -32,16 +32,23 @@ The SC model respects the requirements of Stability and maximum cardinality and 
 
 \subsection{Machine learning-based Matching}\label{machine-learning-based-matching}%
 
-To address this issue, we propose two mechanisms built on the machine learning-based approach by~\citet{bansak_2018}: the constrained random serial dictatorship mechanism
-(CRSD) and the constrained rank value mechanism (CRV)~\citet{olbergml}.
+Let \(\pi_{ij}\) be the probability that the family \(i\) integrates properly in the country \(j\) and it can be estimated from \(P_c\) using a machine learning process.
+We call the expected number of successfully integrated families, i.e., \(z (\mu) = \sum_{i \in F} \pi_{i \mu (i)}\), the objective function of \(\mu\). A feasible matching \(\mu^*\) is optimal if \(\mu^* \in \arg\max_{\mu} \{z (\mu)\}\).
+Variable \(x_{ij}\) indicates whether the family \(i\) will be assigned to country \(j\).
+Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in terms of reported preferences \(P_r\) and at the same time ensures that \(z (\mu)\) is within a factor of \(\alpha\) of \(z \left( \mu^* \right) \) for a previously chosen \(\alpha \in [0,1]\).
 
-% in ~\citet{bansak_2018} e \citet{olbergml} si parlano di due algoritmi
+A CRSD instance \(\hat {I} = (F, L, q, \pi, P, \gamma)\). The instance return \(\mu : F \rightarrow C \cup \{\emptyset\}\).
+The general idea of CRSD is to let a family choose their match only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
+The constrained random serial dictatorship (CRSD) mechanism~\citet{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
+Algorithm is illustrated the~\ref{alg:crsd}.
 
- %continua in \citet{olbergml}
+Constrained rank value (CRV) mechanism it is a variant of the CRSD one that uses a rank function.
+It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function express ranks assigning a values between 0 and 1 to positions in preference orders that is monotonically decreasing.
+Algorithm is illustrated the~\ref{alg:crv}~\citet{olbergml}.
 
 \begin{algorithm}
     \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
-    \KwData{\( F , C , P_r , \pi , b , \alpha \)}
+    \KwData{\( F , C , P_r , \pi  , \alpha \)}
     \KwResult{\(\mu\)}
     \SetKw{Break}{break}
     \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
@@ -76,6 +83,7 @@ To address this issue, we propose two mechanisms built on the machine learning-b
 
             \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
                 \( \mu ( i ) \leftarrow j \)
+
                 \Break
             }
         }
@@ -84,7 +92,7 @@ To address this issue, we propose two mechanisms built on the machine learning-b
 
 \begin{algorithm}
     \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
-    \KwData{\( F , C , P_r , \pi , b , \alpha \)}
+    \KwData{\( F , C , P_r , \pi  ,v, \alpha \)}
     \KwResult{\(\mu\)}
     \(\tiny
         \begin{aligned}
