@@ -4,7 +4,7 @@
 \subsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}%
 
 A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{P_c, P_r\}\) and \(F\) is omitted.
-Similarly, a CA-instance of an exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\).
+Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\).
 
 We can now turn to the desiderata encountered in the previous section.
 It will be argued that the desideratum for which preferences are satisfied “as much as possible" amounts to stability in the CA
@@ -30,7 +30,12 @@ The SC model respects the requirements of stability, maximum cardinality and COM
 
 
 \subsection{Machine learning-based Matching}\label{machine-learning-based-matching}%
-
+Machine learning-based algorithms used for solving our case of study can be viewed as:
+\begin{itemize}
+    \item a clustering problem taking into account only of the people preferences;
+    \item a multilabel classification where every person is assigned to a state or an exit according to \(P_c\) and \(N_e\).
+\end{itemize}
+Both approaches violate part of the preferences and COM but combining the result of the multilabel classification with some optimization algorithms it is possible to achieve interesting results.
 Let \(\pi_{ij}\) be the probability that the family \(i\) integrates properly in the country \(j\), estimated from \(P_c\) using a machine learning process.
 We call the expected number of successfully integrated families, i.e., \(z (\mu) = \sum_{i \in F} \pi_{i \mu (i)}\), the objective function of \(\mu\). A feasible matching \(\mu^*\) is optimal if \(\mu^* \in \arg\max_{\mu} \{z (\mu)\}\).
 Variable \(x_{ij}\) indicates whether the family \(i\) will be assigned to country \(j\).
