@@ -41,19 +41,6 @@ We call the expected number of successfully integrated families, i.e., \(z (\mu)
 Variable \(x_{ij}\) indicates whether the family \(i\) will be assigned to country \(j\).
 Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in terms of reported preferences \(P_r\) and at the same time ensures that \(z (\mu)\) is within a factor of \(\alpha\) of \(z \left( \mu^* \right) \) for a previously chosen \(\alpha \in [0,1]\).
 
-A CRSD instance is \(\hat {I} = (F, L, q, \pi, P, \gamma)\) and it returns \(\mu : F \rightarrow C \cup \{\emptyset\}\).
-The general idea of CRSD is to let a family choose their match only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
-The constrained random serial dictatorship (CRSD) mechanism~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
-Pseudocode of CRSD is illustrated in the algorithm~\ref{alg:crsd}.
-
-Constrained rank value (CRV) mechanism it is a variant of the CRSD one which uses a rank function.
-It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function that assigns a values between 0 and 1 to positions in preference orders that is monotonically decreasing~\cite{olbergml}.
-Pseudocode of CRV is illustrated in the algorithm~\ref{alg:crv}.
-
-The machine learning model \(\pi\) is Admissible for COM because the algorithm used, even if it calculates a wrong value, doesn’t cause any death.
-
-
-
 \begin{algorithm}
     \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
     \KwData{\( F , C , P_r , \pi  , \alpha \)}
@@ -97,6 +84,19 @@ The machine learning model \(\pi\) is Admissible for COM because the algorithm u
         }
     }
 \end{algorithm}
+
+\FloatBarrier
+
+A CRSD instance is \(\hat {I} = (F, L, q, \pi, P, \gamma)\) and it returns \(\mu : F \rightarrow C \cup \{\emptyset\}\).
+The general idea of CRSD is to let a family choose their match only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
+The constrained random serial dictatorship (CRSD) mechanism~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
+Pseudocode of CRSD is illustrated in the algorithm~\ref{alg:crsd}.
+
+Constrained rank value (CRV) mechanism it is a variant of the CRSD one which uses a rank function.
+It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function that assigns a values between 0 and 1 to positions in preference orders that is monotonically decreasing~\cite{olbergml}.
+Pseudocode of CRV is illustrated in the algorithm~\ref{alg:crv}.
+
+The machine learning model \(\pi\) is Admissible for COM because the algorithm used, even if it calculates a wrong value, doesn’t cause any death.
 
 \begin{algorithm}
     \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
