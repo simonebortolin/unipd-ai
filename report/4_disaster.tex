@@ -1,44 +1,37 @@
 \subsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
 
 
-In the event of a catastrophe (fire, earthquake, hurricane, bomb, \ldots) it's necessary to study and implement an evacuation system capable of guaranteeing escape in an orderly and efficient manner, causing as little panic as possible. In particular, an evacuation model can be identified by two elements: people and escape routes.
+In the event of a catastrophe (fire, earthquake, hurricane, bomb, \ldots) it's necessary to study and implement an evacuation system capable to guarantee an efficient and orderly escape, causing the least possible panic. In particular, an evacuation model can be identified by two elements: people and escape routes.
 
-\nocite{it-81-2008,uk-1541-2005,usa-1910-1974,cee-654-1989}%
-As established by Italian Decreto Legistrativo n. 81/2008, English Regulartory Reform Act n. 1541/2005, American Title 29 of the Code of Federal Regulations (CFR)
+\nocite{it-81-2008,usa-1910-1974,cee-654-1989}%
+As established by Italian Decreto Legistrativo n. 81/2008, American Title 29 of the Code of Federal Regulations (CFR)
 1910.33-39 and European Directive 89/654/EEC, each state has its own regulations that can be summarised as:
 \begin{itemize}
-    \item every 60 cm width of a door, corridor or staircase\footnote{60 cm is the minimum width width of a passageway for a person to walk easily without crawling or colliding.} can come out around 60 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.};
+    \item every 60 cm width of a door, corridor or staircase\footnote{60 cm is the minimum width of a passageway for a person to walk easily without crawling or colliding.} can come out around 60 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.};
     \item from the middle of a room to the nearest emergency exit there can be maximum 60 meters.
 \end{itemize}
 
 The problem of finding the best escape route for every person can be viewed as a matching problem very similar to the one for refugee resettlement. An instance of a people-exits matching problem is a 6-tuple \((E, P, q, N_e, N_p, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) exits and \(n\) people, respectively.
-For the same reasons as before, we can define the agents of the market as \(a_k \in P \subset E\) and, since it can be assumed that \(n \gg m\), we are concerned with many-to-one matchings.
-The maximum number of people that can be matched to each exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,...,m}\).
 
-Afterwards, \(N_e = \{N(e_1), \dots, N(e_m)\}\) and \(N_p = \{ N(p_1), \dots, N(p_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each exit over the set of people and for each person over
-the set of exits. Each \(N_p(p_i)\) contains a list of exits ordered in the format \(e_1 \succ_{p_i} e_2\) where \(e_1\) is nearer than \(e_2\). Similarly, each \(N_e(e_i)\) contains a list of people ordered by priority (e.g. a staircase with ramp gives priority to people with disabilities). An example is illustrated in Table~\ref{tab:people-exit}.
+For the same reasons as before, we can define the agents of the market as \(a_k \in P \subset E\) and, since it can be assumed that \(n \gg m\), we are concerned with many-to-one matchings. The maximum number of people that can be matched to each exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,...,m}\).
 
-Also in the case of people evacuation, another element to consider is the list of people who must be together (e.g. a classroom or a family): \(F=\{F(f_1), \dots, F(f_l)\}\) where  \(F(f_i) = \{p_a, p_b, \dots\}\) and \(l\leq n\).
-    
-As there is a subset \(C \subseteq E \times P \times F\) of acceptable people-exit pairs.
-In addition, there is the limit on the amount of each individual tuple that is acceptable, because, as a people can't be split into two exit nor can one exit receive more than the maximum allowable quotas.
+Afterwards, \(N_e = \{N(e_1), \dots, N(e_m)\}\) and \(N_p = \{ N(p_1), \dots, N(p_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each exit over the set of people and for each person over the set of exits. Each \(N_p(p_i)\) contains a list of exits ordered in the format \(e_1 \succ_{p_i} e_2\) where \(e_1\) is nearer than \(e_2\). Similarly, each \(N_e(e_i)\) contains a list of people ordered by priority (e.g. a staircase with ramp gives priority to people with physical disabilities). An example is illustrated in Table~\ref{tab:people-exit}.
 
-Denote \( A \left( e_i \right) = \left\{ p_j \mid \left( e_i , p_j \right) \in C \right\} \) the set of acceptable people for a given \( e_i \in E \); and equivalently for the people.
+Similarly to the previous model, also in this case, last elements to consider are the groups of people who must escape together (e.g. a classroom): let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of these groups, where \(F(f_i) = \{p_a, p_b, \dots\}\) and \(l\leq n\).
 
-An assignment \(M\) is a subset of \(C\) and contains the item \( a_k \in E \cup P \).
-Obviously in case of a disaster every person should be able to evacuate, so  \( p_i\) can't be unassigned and \( M \left( p_i\right) \neq \emptyset \).\footnote{Although it's possible that for some reason that exit is impracticable, just for this reason it's possible to realize models in which you have \(|M \left( p_i \right)| \geq 1\): i.e. assign to each user a second emergency exit, so that if the first is impracticable the second can be used.
-This strategy should be avoided, and it is better to have a system of detection of impracticable exits.}
-It is to remember that the assignment is valid if and only if: \( \left| M \left( p_i\right) \right| = 1 \) for all \( p_i\in P ; \) and \( \left| M \left( e_j \right) \right| \leq q _ { j } \) for all \( e_j \in E  \).
+The subset of acceptable people-exits pairs is defined as \(C \subseteq E \times P \times F\). In addition, commonly to the previous model, the amount of acceptable tuples is bounded because, as a person can't be split into two exits, nor can one exit receive more than the maximum allowable quotas. Denote \( A \left( e_i \right) = \left\{ p_j \mid \left( e_i , p_j \right) \in C \right\} \) as the set of acceptable people for a given \( e_i \in E \); and equivalently for the people.
 
-This model can be widely used to manage evacuation and shelter to safe places in many locations and for various situations.
-It can be applied to keep safe schools, crowded buildings, hospitals, campuses and entire cities from dangers like fire, tsunami, war, earthquake, severe flood and many others.
+An assignment \(M\) is a subset of \(C\) and contains the item \( a_k \in E \cup P \). Obviously in case of a disaster every person should be able to evacuate, so  \( p_i\) can't be unassigned: \( M \left( p_i\right) \neq \emptyset \).\footnote{Although it's possible that for some reason an exit is impracticable and, just in this cases, it's possible to realize models in which you have \(|M \left( p_i \right)| \geq 1\). In this way, to each user is assigned a second emergency exit, so that if the first one is impracticable the second one can be used. This strategy should be avoided, and it's better to have a detection system for impracticable exits.}
+Note that the assignment is valid if and only if: \(\left| M \left( p_i\right) \right| = 1 \ \forall p_i\in P\) and \(\left| M \left( e_j \right) \right| \leq q_j \ \forall e_j \in E\).
+
+This model can help people a lot and, in particular, it can be widely used to manage evacuation and shelter to safe places in many locations and for various situations. For example, it can be applied to keep safe schools, hospitals, companies and campuses from dangers like earthquakes, fires, wars and severe floods.
 
 \begin{table}[!htb]
     \centering
     \begin{tabular}{c|c}
-        \hline People                                             & Exit                                                       \\
-        \hline\( p_{1} \succ_{e_{1}} p_{2} \succ_{e_{1}} p_{3} \) & \( e_{2} \succ e_{1} \) for both \( p_{1} \) and \( p_{2} \) \\
-        \( p_{2} \succ_{e_{2}} p_{1} \succ_{e_{2}} p_{3} \)       & \( p_{3} \) declares only \( e_{2} \) within 60 mt         \\
+        \hline People & Exit \\
+        \hline \(p_1 \succ_{e_1} p_2 \succ_{e_1} p_3\) & \(e_2 \succ e_1\) for both \(p_1\) and \(p_2\) \\
+        \(p_2 \succ_{e_2} p_1 \succ_{e_2} p_3\) & \(p_3\) declares only \(e_2\) within 60 mt \\
         \hline
     \end{tabular}
     \caption{People and exits preferences example. People, \(p_1, p_2, p_3\), exits \(e_1, e_2\) with \( q_1 = 2, \ q_2 = 1\).}
