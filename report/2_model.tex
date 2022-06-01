@@ -1,31 +1,31 @@
 \subsection{Matching model under preferences}\label{matching-model-under-preferences}%
 
-Matching under preferences is a tool from cooperative game theory.
-It can be applied to two-sided markets in which heterogeneous agents (or objects) of one side are distributed over agents of the other side of the market considering the satisfaction of agents’ preferences or objects’ priorities. \citet{gale_1962} laid the theoretical foundations for the theory.
+
+Matching under preferences is a tool from cooperative game theory. It can be applied to two-sided markets in which heterogeneous agents (or objects) of one side are distributed over agents of the other side, considering the satisfaction of agents’ preferences (or objects’ priorities). \citet{gale_1962} formalized the theoretical foundations of this tool.
 
 \textit{Matching markets with sizes} arise in a variety of contexts, and in its simplest model, agents have ordinal preferences over objects that are available in multiple identical units. For each object, agents are ranked according to exogenous priorities. The model can be extended to fit specific applications if agents have preferences over both an object and a number of units.
 
-An agent and an object form a \textit{blocking pair} of a given matching if the agent prefers the object to his own and at least the number of units he requires are assigned to agents with a lower priority, the number of units required has to be less or equal to the availability of the object.
+An agent and an object form a \textit{blocking pair} of a given matching if the agent prefers the object to his current one and the number of units he requires are assigned to agents with a lower priority. The number of units required has to be less or equal to the availability of the object.
 
 
 \subsubsection{Stability}%
 
-Stability, initially introduced by \citet{gale_1962}, is a central concept in matching theory. A matching is \textit{stable} if it does not have any blocking pair. In two-sided matching markets, with strategic agents on both sides, stability constitutes an essential equilibrium criterion, thus an unstable matching is not at equilibrium. A blocking pair is unfair in the sense that the agent is not able to get an object even though he has a high enough priority.
+Stability, initially introduced by \citet{gale_1962}, is a main concept in matching theory. A matching is \textit{stable} if it does not have any blocking pair. In two-sided matching markets, with strategic agents on both sides, stability constitutes an essential equilibrium criterion. A blocking pair is unfair in the sense that the agent is not able to get an object even though he has a high enough priority.
 
 
 \subsubsection{Size envy-free}%
 
-A matching is said to be \textit{size envy-free} if, whenever an agent prefers an object to his own, all agents matched to that object have either a higher priority or a smaller size. Size envy-freeness is a fairness criterion in the sense that any priority violation can be justified by the agents' different sizes. \textit{Weak envy-freeness} relaxes envy-freeness by allowing some innocuous priority violations.
+A matching is said to be \textit{size envy-free} if, whenever an agent prefers an object to his current one, all agents matched to that object have either a higher priority or a smaller size. Size envy-freeness is a fairness criterion in the sense that any priority violation can be justified by the different sizes of the agents. \textit{Weak envy-freeness} relaxes envy-freeness by allowing some innocuous priority violations.
 
 
 \subsubsection{Non-wasteful}%
 
-A matching is defined \textit{non-wasteful} if, whenever an agent prefers an object to his own, the object has enough unassigned units for the agent to be matched to it without removing any other agent. Non-wastefulness constitutes both a fairness and an efficiency criterion as it ensures that units only remain unassigned if they cannot benefit any agent.
+A matching is defined \textit{non-wasteful} if, whenever an agent prefers an object to his current one, the object has enough unassigned units to be matched to the agent without removing any other agent. Non-wastefulness constitutes both a fairness and an efficiency criterion as it ensures that units only remain unassigned if they cannot benefit any agent.
 
 
 \subsubsection{Logical relationships}%
 
-Weak envy-freeness is logically independent of stability in the same way as envy-freeness is. In contrast, stability only fails due to the presence of waste or via a priority violation so if a matching is non-wasteful and weakly envy-free, then it is stable. A graphic representation of the relationships between solutions is present in the figure~\ref{fig:matching}.
+Weak envy-freeness is logically independent of stability in the same way as envy-freeness is. In contrast, stability only fails due to the presence of waste or via a priority violation so if a matching is non-wasteful and weakly envy-free, then it is stable. A graphic representation of the relationships between solutions is present in the Figure~\ref{fig:matching}.
 
 \begin{figure}[!htb]
     \def\svgwidth{\columnwidth}
