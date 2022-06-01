@@ -11,9 +11,10 @@ As established by Italian Decreto Legistrativo n. 81/2008, American Title 29 of 
     \item from the middle of a room to the nearest emergency exit there can be maximum 60 meters.
 \end{itemize}
 
-The problem of finding the best escape route for every person can be viewed as a matching problem very similar to the one for refugee resettlement. An instance of a people-exits matching problem is a 6-tuple \((E, P, q, N_e, N_p, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) exits and \(n\) people, respectively.
+The problem of finding the best escape route for every person can be viewed as a matching problem very similar to the one for refugee resettlement\footnote{The exit model can be used to make a simple escape plan in a static way using upper bounds on the affluence.
+Or it can be solved dynamically using real affluence data through a computer vision system and dynamic people-addressing systems.}. An instance of a people-exits matching problem is a 6-tuple \((E, P, q, N_e, N_p, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) exits and \(n\) people, respectively.
 
-For the same reasons as before, we can define the agents of the market as \(a_k \in P \subset E\) and, since it can be assumed that \(n \gg m\), we are concerned with many-to-one matchings. The maximum number of people that can be matched to each exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,...,m}\).
+For the same reasons as before, we can define the agents of the market as \(a_k \in P \subset E\) and, since it can be assumed that \(n \gg m\), we are concerned with many-to-one matchings. The maximum number of people that can be matched to each exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,\ldots,m}\).
 
 Afterwards, \(N_e = \{N(e_1), \dots, N(e_m)\}\) and \(N_p = \{ N(p_1), \dots, N(p_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each exit over the set of people and for each person over the set of exits. Each \(N_p(p_i)\) contains a list of exits ordered in the format \(e_1 \succ_{p_i} e_2\) where \(e_1\) is nearer than \(e_2\). Similarly, each \(N_e(e_i)\) contains a list of people ordered by priority (e.g. a staircase with ramp gives priority to people with physical disabilities). An example is illustrated in Table~\ref{tab:people-exit}.
 
