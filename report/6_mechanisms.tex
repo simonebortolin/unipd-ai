@@ -12,28 +12,28 @@ model.
 
 This model meets the requirements of stability and maximum cardinality, but for the case study of asylum, even if the requirement of no rights violation is met and it is adopted a modified CA model in which “everyone finds everyone acceptable", there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences".
 An “incorrect use of preferences" is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles.
-This happens because countries can express indirect preferences that can discriminate, for example by requiring language skills.
+This happens because countries can express indirect preferences that can discriminate, for example requiring language skills.
 Compliance is also violated if agents can “game the system"~\cite{basshuysen}.
 
 
 \subsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}%
 
 The SC model can be attained from the CA model by restricting the set of preference lists to the refugees, and defining priority lists for the countries.
-Thus, a SC instance of a refugee-country matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \ldots Pri(c_m)\}\) is the set of countries’ priority lists containing the same data as \(P_c\).
+Thus, a SC instance of a refugee-country matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \ldots Pri(c_m)\}\) is the set of countries’ priority lists containing the same data of \(P_c\).
 The rest of the definition is the same as the general model and the CA model.
 
 Priority rankings are usually generated through a point system: if two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors.
-In the context  of the refugee match, it seems plausible to give a refugee who has been waiting longer for transfer  more points in all countries’ rankings than to a refugee with less waiting time spent;
+In the context  of the refugee match, it seems fair to give a refugee who has been waiting longer for transfer  more points in all countries’ rankings than to a refugee with less waiting time spent;
 so waiting time since registration in the system could be used as a continuous variable to break non-strict priorities~\cite{basshuysen}.
 
-The SC model respects the requirements of stability, maximum cardinality and COM because it does not allow the inclusion of requirements contrary to the higher-order policy goals or ethical principles~\cite{basshuysen}.
+The SC model respects the requirements of stability, maximum cardinality and COM because it does not allow the inclusion of requirements contrary to higher-order policy goals or ethical principles~\cite{basshuysen}.
 
 
 \subsection{Machine learning-based Matching}\label{machine-learning-based-matching}%
 Machine learning-based algorithms used for solving our case of study can be viewed as:
 \begin{itemize}
     \item a clustering problem taking into account only of the people preferences;
-    \item a multilabel classification where every person is assigned to a state or an exit according to \(P_c\) and \(N_e\).
+    \item a multilabel classification where every person is assigned to a state or an exit according to \(P_c\) or \(N_e\).
 \end{itemize}
 Both approaches violate part of the preferences and COM but combining the result of the multilabel classification with some optimization algorithms it is possible to achieve interesting results.
 Let \(\pi_{ij}\) be the probability that the family \(i\) integrates properly in the country \(j\), estimated from \(P_c\) using a machine learning process.
@@ -92,8 +92,8 @@ The general idea of CRSD is to let a family choose their match only from the set
 The constrained random serial dictatorship (CRSD) mechanism~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
 Pseudocode of CRSD is illustrated in the algorithm~\ref{alg:crsd}.
 
-Constrained rank value (CRV) mechanism it is a variant of the CRSD one which uses a rank function.
-It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\) where \(v\) is a rank function that assigns a values between 0 and 1 to positions in preference orders that is monotonically decreasing~\cite{olbergml}.
+Constrained rank value (CRV) mechanism is a variant of the CRSD one which uses a rank function.
+It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\), where \(v\) is a rank function that assigns values between 0 and 1 to positions in preference order that is monotonically decreasing~\cite{olbergml}.
 Pseudocode of CRV is illustrated in the algorithm~\ref{alg:crv}.
 
 The machine learning model \(\pi\) is Admissible for COM because the algorithm used, even if it calculates a wrong value, doesn’t cause any death.
