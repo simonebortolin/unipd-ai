@@ -1,6 +1,5 @@
 \subsection{Matching model in case of disaster}\label{matching-model-in-case-of-disaster}%
 
-
 In the event of a catastrophe (fire, earthquake, hurricane, bomb, \ldots) it's necessary to study and implement an evacuation system capable to guarantee an efficient and orderly escape, causing the least panic possible. In particular, an evacuation model can be identified by two elements: people and escape routes.
 
 \nocite{it-81-2008,usa-1910-1974,cee-654-1989}%
@@ -8,9 +7,9 @@ As established by Italian Decreto Legistrativo n. 81/2008, American Title 29 of 
 1910.33-39 and European Directive 89/654/EEC, each state has its own regulations that can be summarised as shown in the Figure~\ref{fig:principle_behind_the_evacuation_model}.
 
 \begin{figure}[!htb]
-    \vspace{-1.5em}
+    \vspace{-0.75em}
     \centering{%
-        \resizebox{0.6\columnwidth}{!}{%
+        \resizebox{0.9\columnwidth}{!}{%
             \def\svgwidth{\columnwidth}%
             \subfile{media/principle_behind_the_evacuation_model.pdf_tex}%
         }
@@ -20,18 +19,19 @@ As established by Italian Decreto Legistrativo n. 81/2008, American Title 29 of 
     \label{fig:principle_behind_the_evacuation_model}
     \vspace{-1em}
 \end{figure}
-\footnotetext{60 cm is the minimum width of a passageway for a person to walk easily without crawling or colliding.}
-
-\footnotetext{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.}
+\addtocounter{footnote}{-2}
+\stepcounter{footnote}\footnotetext{60 cm is the minimum width of a passageway for a person to walk easily without crawling or colliding.}
+\stepcounter{footnote}\footnotetext{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.}
 
 The problem of finding the best escape route for every person can be viewed as a matching problem very similar to the one for refugee resettlement\footnote{The exit model can be used to make a simple escape plan in a static way using upper bounds on the affluence.
 Or it can be solved dynamically using real affluence data through a computer vision system and dynamic people-addressing systems.}. An instance of a people-exit matching problem is a 6-tuple \((E, P, q, N_e, N_p, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) exits and \(n\) people, respectively.
 
 For the same reasons as before, we can define the agents of the market as \(a_k \in P \subset E\) and, since it can be assumed that \(n \gg m\), we are concerned with many-to-one matchings. The maximum number of people that can be matched to each exit is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m\), \(j\in {1,\ldots,m}\).
 
-Afterwards, \(N_e = \{N(e_1), \dots, N(e_m)\}\) and \(N_p = \{ N(p_1), \dots, N(p_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each exit over the set of people and for each person over the set of exits. Each \(N_p(p_i)\) contains a list of exits ordered in the format \(e_1 \succ_{p_i} e_2\) where \(e_1\) is nearer than \(e_2\). Similarly, each \(N_e(e_i)\) contains a list of people ordered by priority (e.g. a staircase with ramp gives priority to people with physical disabilities). An example is illustrated in Table~\ref{tab:people-exit}.
+Afterwards, \(N_e = \{N(e_1), \dots, N(e_m)\}\) and \(N_p = \{ N(p_1), \dots, N(p_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each exit over the set of people and for each person over the set of exits. Each \(N_p(p_i)\) contains a list of exits ordered in the format \(e_1 \succ_{p_i} e_2\) where \(e_1\) is nearer than \(e_2\). Similarly, each \(N_e(e_i)\) contains a list of people ordered by priority (e.g. a staircase with ramp gives priority to people with physical disabilities). An example is in Table~\ref{tab:people-exit}.
 
-Similarly to the previous model, also in this case, last elements to consider are the groups of people who must escape together (e.g. a classroom): let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of these groups, where \(F(f_i) = \{p_a, p_b, \dots\}\) and \(l\leq n\).
+%Similarly to the previous model, also in this case,
+Similarly to the previous model last elements to consider are the groups of people who must escape together (e.g. a classroom): let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of these groups, where \(F(f_i) = \{p_a, p_b, \dots\}\) and \(l\leq n\).
 
 The subset of acceptable person-exit pairs is defined as \(C \subseteq E \times P \times F\). In addition, commonly to the previous model, the amount of acceptable tuples is bounded because, as a person can't be split into two exits, nor can one exit receive more than the maximum allowable quotas. Denote \( A \left( e_i \right) = \left\{ p_j \mid \left( e_i , p_j \right) \in C \right\} \) as the set of acceptable people for a given \( e_i \in E \); and equivalently for the people.
 
@@ -48,6 +48,8 @@ This model can help people a lot and, in particular, it can be widely used to ma
         \(p_2 \succ_{e_2} p_1 \succ_{e_2} p_3\) & \(p_3\) declares only \(e_2\) within 60 mt \\
         \hline
     \end{tabular}
+    \vspace{-0.5em}
     \caption{People and exits' preferences example. People, \(p_1, p_2, p_3\), exits \(e_1, e_2\) with \( q_1 = 2, \ q_2 = 1\).}
     \label{tab:people-exit}
+    \vspace{-1.5em}
 \end{table}

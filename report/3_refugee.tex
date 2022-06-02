@@ -13,11 +13,12 @@ Since the distribution for refugee resettlement is modelled as a matching proble
 
 Note that we are concerned with \textit{many-to-one matchings} since it can be assumed that \(n \gg m\) and each refugee can obtain asylum in at most one country, whereas a given country can accept many refugees. The maximum number of refugees that can be matched to each country is determined by a vector of quotas \(q = (q_j)_j \in \mathbb{N}^m,\ j \in \{1, \dots, m\}\). There may be no real quotas at all: setting \(q_j = n\ \ \forall c_j \in C\) makes them dummies.
 
-Afterwards, \(P_c = \{P(c_1), \dots, P(c_m)\}\) and \(P_r =\{P(r_1), \dots, P(r_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each country over the set of refugees and for each refugee over the set of countries. Each preference \(P_r(r_i)\) contains a list of expressed preferences in the format \(c_1 \succ_{r_i} c_2\), and equivalently for countries' preferences (an example is illustrated in Table~\ref{tab:countries-refugees}).
+Afterwards, \(P_c = \{P(c_1), \dots, P(c_m)\}\) and \(P_r =\{P(r_1), \dots, P(r_n)\}\) are sets of preference lists which include a complete and transitive preference profile for each country over the set of refugees and for each refugee over the set of countries. Each preference \(P_r(r_i)\) contains a list of expressed preferences in the format \(c_1 \succ_{r_i} c_2\), and equivalently for countries' preferences. An example is in Table~\ref{tab:countries-refugees}.
 
 In the particular case of refugees' allocation, last elements to consider are the groups of people who must be assigned together (e.g. a family): let \(F=\{F(f_1), \dots, F(f_l)\}\) be the list of the groups of refugees, where \(F(f_i) = \{r_a, r_b, \dots\}\) and \(l \leq n\).
 %In this case you should be careful to do not exceed the maximum bound to the number of people to keep in the same group and be careful to remove duplicate entries of the same people.
-An example of a full matching is shown in Figure~\ref{fig:complete_matching}.
+An example is shown in Figure~\ref{fig:complete_matching}.
+%An example of a full matching is shown in
 
 A country may declare some refugees unacceptable and a refugee may declare some countries unacceptable, hence, \(E \subseteq R \times C \times F\) is the subset of the acceptable refugee-country pairs. In addition, the amount of acceptable tuples is bounded because, as a refugee can't be split into two nations, nor can one nation receive more than the maximum allowable quotas. Denote \(A \left( r_i \right) = \left\{ c_j \mid \left( r_i, c_j \right) \in E \right\}\) as the set of acceptable countries for a given \(r_i \in R\); and equivalently for the countries.
 
@@ -38,11 +39,12 @@ An assignment \(M\) is a subset of \(E\) that contains \(a_k \in R \cup C\) item
 
 \begin{figure}[!htb]
     \centering{%
-        \resizebox{0.7\columnwidth}{!}{%
+        \resizebox{0.9\columnwidth}{!}{%
             \def\svgwidth{\columnwidth}%
             \subfile{media/complete_matching.pdf_tex}%
         }
     }
+    \vspace{-0.5em}
     \caption{Full matching example. Families \(f_1, \dots, f_5\) with \(|f_1|=|f_4|=|f_5|=3,\ |f_2|=1,\ |f_3|=2\); countries \(c_1, c_2\) with \(q_1 = 6,\ q_2 = 7\).}
     \label{fig:complete_matching}
     \vspace{-1.5em}
