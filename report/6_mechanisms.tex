@@ -3,54 +3,45 @@
 
 \subsection{Matching models as College Admissions Problem}\label{matching-model-as-college-admissions-problem}%
 
-A CA-instance of a refugee-country matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{P_c, P_r\}\) and \(F\) is omitted.
-Similarly, a CA-instance of a exit-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e ,  N_p\}\).
+A CA-instance of a refugees-countries matching problem is a 4-tuple \((C, R, q, P)\) where \(P = \{P_c, P_r\}\) (and \(F\) is omitted). Similarly, a CA-instance of a exits-people matching problem is a 4-tuple \((E, P, q, N)\) where \(N = \{N_e, N_p\}\).
 
-We can now turn to the desiderata encountered in the previous section.
-It will be argued that the desideratum for which preferences are satisfied “as much as possible" amounts to stability in the CA
-model.
+We can now turn to the desiderata encountered in the previous section. It will be argued that the desideratum for which preferences are satisfied “as much as possible" amounts to stability in the CA model.
 
-This model meets the requirements of stability and maximum cardinality, but for the case study of asylum, even if the requirement of no rights violation is met and it is adopted a modified CA model in which “everyone finds everyone acceptable", there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences".
-An “incorrect use of preferences" is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles.
-This happens because countries can express indirect preferences that can discriminate, for example requiring language skills.
-Compliance is also violated if agents can “game the system"~\cite{basshuysen}.
+This model meets the requirements of stability and maximum cardinality, but for the case study of refugee resettlement, even if the requirement of “no rights violation" is met and it's adopted a modified CA model in which “everyone finds everyone acceptable", there is another problem to be taken into account: the system should ban the possibility of “incorrect use of preferences". An “incorrect use of preferences" is an expression of preferences which are in conflict with system compliance (COM): in this case higher-order policy goals or ethical principles. This happens because countries can express indirect preferences which can lead to discrimination (e.g. requiring language skills). As pointed out by ~\cite{basshuysen}, compliance is also violated if agents can “game the system".
 
 
 \subsection{Matching models as School Choice Problem}\label{matching-model-as-school-choice-problem}%
 
-The SC model can be attained from the CA model by restricting the set of preference lists to the refugees, and defining priority lists for the countries.
-Thus, a SC instance of a refugee-country matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \ldots Pri(c_m)\}\) is the set of countries’ priority lists containing the same data of \(P_c\).
-The rest of the definition is the same as the general model and the CA model.
+The SC model can be derived from the CA model by restricting the set of preference lists to only those of the refugees and defining priority lists for the countries. Thus, a SC instance of a refugees-countries matching problem is a 5-tuple \((R, C, q, P_r, Pri)\) where \(Pri = \{Pri(c_1), \dots, Pri(c_m)\}\) is the set of countries’ priority lists containing same data of \(P_c\).
+%The rest of the definition is the same as the general model and the CA model.
 
-Priority rankings are usually generated through a point system: if two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors.
-In the context  of the refugee match, it seems fair to give a refugee who has been waiting longer for transfer  more points in all countries’ rankings than to a refugee with less waiting time spent;
-so waiting time since registration in the system could be used as a continuous variable to break non-strict priorities~\cite{basshuysen}.
+Priority rankings are usually generated through a points system: if two applicants have identical points, the priority ranking may be determined through a lottery or continuous factors. To keep fairness in the context of refugee resettlement, between two refugees with same points, the refugee who has been waiting longer for asylum is prioritized. So, the waiting time since asylum request could be used as a continuous variable to break non-strict priorities.
 
-The SC model respects the requirements of stability, maximum cardinality and COM because it does not allow the inclusion of requirements contrary to higher-order policy goals or ethical principles~\cite{basshuysen}.
+The SC model respects the requirements of stability, maximum cardinality and COM because it doesn't allow the inclusion of requirements contrary to higher-order policy goals or ethical principles ~\cite{basshuysen}.
 
 
 \subsection{Machine learning-based Matching}\label{machine-learning-based-matching}%
-Machine learning-based algorithms used for solving our case of study can be viewed as:
+
+Machine learning-based algorithms used for solving our case study can be viewed as:
+
 \begin{itemize}
-    \item a clustering problem taking into account only of the people preferences;
-    \item a multilabel classification where every person is assigned to a country or an exit according to \(P_c\) or \(N_e\).
+    \item a clustering problem taking into account only people's preferences;
+    \item a multilabel classification problem where every person is assigned to a country or an exit according to \(P_c\) or \(N_e\).
 \end{itemize}
-Both approaches violate part of the preferences and COM but combining the result of the multilabel classification with some optimization algorithms it is possible to achieve interesting results.
-Let \(\pi_{ij}\) be the probability that the family \(i\) integrates properly in the country \(j\), estimated from \(P_c\) using a machine learning process.
-We call the expected number of successfully integrated families, i.e., \(z (\mu) = \sum_{i \in F} \pi_{i \mu (i)}\), the objective function of \(\mu\). A feasible matching \(\mu^*\) is optimal if \(\mu^* \in \arg\max_{\mu} \{z (\mu)\}\).
-Variable \(x_{ij}\) indicates whether the family \(i\) will be assigned to country \(j\).
-Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in terms of reported preferences \(P_r\) and at the same time ensures that \(z (\mu)\) is within a factor of \(\alpha\) of \(z \left( \mu^* \right) \) for a previously chosen \(\alpha \in [0,1]\).
+Both approaches violate part of the preferences and COM but combining the result of the multilabel classification with some optimization algorithms it's possible to achieve interesting results. Let \(\pi_{ij}\) be the probability that the family \(i\) integrates properly in the country \(j\), estimated from \(P_c\) using a machine learning process. We call the expected number of successfully integrated families, i.e., \(z (\mu) = \sum_{i \in F} \pi_{i \mu (i)}\), the objective function of \(\mu\). A feasible matching \(\mu^*\) is optimal if \(\mu^* \in \arg\max_{\mu} \{z (\mu)\}\). Variable \(x_{ij}\) indicates whether the family \(i\) will be assigned to country \(j\).
+
+Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in terms of reported preferences \(P_r\) and at the same time ensures that \(z (\mu)\) is within a factor of \(\alpha\) of \(z \left( \mu^* \right)\) for a previously chosen \(\alpha \in [0,1]\).
 
 \begin{algorithm}
     \caption{Constrained Random Serial Dictatorship (CRSD)}\label{alg:crsd}
-    \KwData{\( F , C , P_r , \pi  , \alpha \)}
+    \KwData{\(F, C, P_r, \pi, \alpha\)}
     \KwResult{\(\mu\)}
     \SetKw{Break}{break}
-    \( \mu ( i ) \leftarrow \emptyset \) for all \( i \in F \).
+    \(\mu ( i ) \leftarrow \emptyset\) for all \(i \in F\).
 
     \(\tiny
         \begin{aligned}
-            z ^ * \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+            z^* \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
             \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
             & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
             & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
@@ -58,17 +49,17 @@ Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in
         \end{aligned}
     \)%
 
-    \( Q \leftarrow F \).
+    \(Q \leftarrow F\).
 
-    \While{\( Q \neq \emptyset \)}{
-        Remove randomly chosen \( i \in Q \) from \( Q \).
+    \While{\(Q \neq \emptyset\)}{
+        Remove randomly chosen \(i \in Q\) from \(Q\).
 
-        \If{\( \left| F _ { j } ( \mu ) \right| < q _ { j } \)}{
-            \( \mu ^ { \prime } \leftarrow \mu ; \mu ^ { \prime } ( i ) \leftarrow j \)
+        \If{\(\left| F_j ( \mu ) \right| < q_j\)}{
+            \(\mu ^ {\prime} \leftarrow \mu ; \mu ^ {\prime} ( i ) \leftarrow j\)
 
             \(\tiny
                 \begin{aligned}
-                    z ^ { \prime } \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+                    z^{\prime} \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
                     \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
                     & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
                     & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
@@ -76,8 +67,8 @@ Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in
                 \end{aligned}
             \)%
 
-            \If{\( z ^ { \prime } \geq \alpha z ^ { * } \)}{
-                \( \mu ( i ) \leftarrow j \)
+            \If{\(z^{\prime} \geq \alpha z^*\)}{
+                \(\mu ( i ) \leftarrow j\)
 
                 \Break
             }
@@ -88,23 +79,23 @@ Our goal is to find a feasible matching \(\mu\) that maximizes family welfare in
 \FloatBarrier
 
 A CRSD instance is \(\hat {I} = (F, L, q, \pi, P, \gamma)\) and it returns \(\mu : F \rightarrow C \cup \{\emptyset\}\).
-The general idea of CRSD is to let a family choose their match only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
-The constrained random serial dictatorship (CRSD) mechanism~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
-Pseudocode of CRSD is illustrated in the algorithm~\ref{alg:crsd}.
+The general idea of CRSD is to let a family choose their preferences only from the set of remaining countries if it can be guaranteed an \(\alpha\)-approximation of the objective.
+The constrained random serial dictatorship (CRSD) mechanism ~\cite{bansak_2018} is a constrained version of the well known random serial dictatorship mechanism.
+Pseudocode of CRSD is illustrated in the Algorithm~\ref{alg:crsd}.
 
 Constrained rank value (CRV) mechanism is a variant of the CRSD one which uses a rank function.
-It is based on \(\hat {I} = ( F , C , P_r , \pi  ,v, \alpha )\), where \(v\) is a rank function that assigns values between 0 and 1 to positions in preference order that is monotonically decreasing~\cite{olbergml}.
-Pseudocode of CRV is illustrated in the algorithm~\ref{alg:crv}.
+It's based on \(\hat {I} = (F, C, P_r, \pi, v, \alpha)\), where \(v\) is a rank function that assigns values between 0 and 1 to positions in preference order that is monotonically decreasing ~\cite{olbergml}.
+Pseudocode of CRV is illustrated in the Algorithm~\ref{alg:crv}.
 
 The machine learning model \(\pi\) is Admissible for COM because the algorithm used, even if it calculates a wrong value, doesn’t cause any death.
 
 \begin{algorithm}
     \caption{Constrained Rank Value Mechanism (CRV)}\label{alg:crv}
-    \KwData{\( F , C , P_r , \pi  ,v, \alpha \)}
+    \KwData{\(F, C, P_r, \pi, v, \alpha\)}
     \KwResult{\(\mu\)}
     \(\tiny
         \begin{aligned}
-            z \left( \mu ^ { * } \right) \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
+            z \left( \mu^* \right) \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \\[-1mm]
             \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
             & \sum_{j \in C} a_{i j}=1 & a_{i \mu(i)}=1 \\[-1mm]
             & a_{i\mu (i)} = 1 &  \forall i \in F(\mu) \\[-1mm]
@@ -117,10 +108,9 @@ The machine learning model \(\pi\) is Admissible for COM because the algorithm u
             \mu \leftarrow \operatorname{maximize} & \sum_{i \in F} \sum_{j \in C} v\left(P_r(r_i)_j\right) a_{i j} \\[-1mm]
             \operatorname {subject}\operatorname{to} & \sum_{i \in F} a_{i j}=q_{j} & \forall j \in C \\[-1mm]
             & \sum_{j \in L} a_{i j}=1 & \forall i \in F \\[-1mm]
-            & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \geq \alpha z \left( \mu ^ { * } \right) \\[-1mm]
+            & \sum_{i \in F} \sum_{j \in C} \pi_{i j} a_{i j} \geq \alpha z \left( \mu^* \right) \\[-1mm]
             & a_{i j} \in\{0,1\} & \forall i \in F, \forall j \in C
         \end{aligned}
     \)%
 
 \end{algorithm}
-
