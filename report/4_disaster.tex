@@ -5,11 +5,24 @@ In the event of a catastrophe (fire, earthquake, hurricane, bomb, \ldots) it's n
 
 \nocite{it-81-2008,usa-1910-1974,cee-654-1989}%
 As established by Italian Decreto Legistrativo n. 81/2008, American Title 29 of the Code of Federal Regulations (CFR)
-1910.33-39 and European Directive 89/654/EEC, each state has its own regulations that can be summarised as:
-\begin{itemize}
-    \item every 60 cm width of a door, corridor or staircase\footnote{60 cm is the minimum width of a passageway for a person to walk easily without crawling or colliding.} can come out around 60 people\footnote{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.};
-    \item from the middle of a room to the nearest emergency exit there can be maximum 60 meters.
-\end{itemize}
+1910.33-39 and European Directive 89/654/EEC, each state has its own regulations that can be summarised as shown in the Figure~\ref{fig:principle_behind_the_evacuation_model}.
+
+\begin{figure}[!htb]
+    \vspace{-1.5em}
+    \centering{%
+        \resizebox{0.6\columnwidth}{!}{%
+            \def\svgwidth{\columnwidth}%
+            \subfile{media/principle_behind_the_evacuation_model.pdf_tex}%
+        }
+    }
+    \vspace{-0.75em}
+    \caption{Principles underlying the evacuation model: every 60 cm width of a door, corridor or staircase\footnotemark \ can come out around 60 people\footnotemark \ and from the middle of a room to the nearest emergency exit there can be maximum 60 meters.}
+    \label{fig:principle_behind_the_evacuation_model}
+    \vspace{-1em}
+\end{figure}
+\footnotetext{60 cm is the minimum width of a passageway for a person to walk easily without crawling or colliding.}
+
+\footnotetext{Regard regulations, in America this number is always fixed at 60, in Europe is more variable, usually it's 50 but it can go up to 70 in education facilities or private offices. For example, a 120 cm wide escape route can allow the exit of 100--140 people, and a 90 cm escape route can allow the exit of 50--70 people.}
 
 The problem of finding the best escape route for every person can be viewed as a matching problem very similar to the one for refugee resettlement\footnote{The exit model can be used to make a simple escape plan in a static way using upper bounds on the affluence.
 Or it can be solved dynamically using real affluence data through a computer vision system and dynamic people-addressing systems.}. An instance of a people-exit matching problem is a 6-tuple \((E, P, q, N_e, N_p, F)\), where \(E = \{e_1, \dots, e_m\}\) and \(P = \{p_1, \dots, p_n\}\) are disjoint sets of \(m\) exits and \(n\) people, respectively.

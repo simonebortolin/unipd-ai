@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20), www.inkscape.org
+%% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'complete_matching.pdf' (pdf, eps, ps)
 %%
@@ -42,28 +42,28 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.56670546)%
+  \begin{picture}(1,0.34484669)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{complete_matching.pdf}}%
-    \put(0.11974586,0.3555349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.32982355,0.3555349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_2\)\end{tabular}}}}%
-    \put(0.53990387,0.3555349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_3\)\end{tabular}}}}%
-    \put(0.74998418,0.3555349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
-    \put(0.96006191,0.3555349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
-    \put(0.29174599,0.03910425){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
-    \put(0.35739579,0.03910425){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
-    \put(0.29174599,0.10475405){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.35739579,0.10475405){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
-    \put(0.29174599,0.17040376){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.29174599,0.23605356){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.60686651,0.03910425){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.6725163,0.03910425){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_3\)\end{tabular}}}}%
-    \put(0.60686651,0.10475405){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
-    \put(0.6725163,0.10475405){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
-    \put(0.60686651,0.17040376){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
-    \put(0.60686651,0.23605356){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_2\)\end{tabular}}}}%
-    \put(0.37806407,0.26219886){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(c_1\)\end{tabular}}}}%
-    \put(0.69318454,0.26219886){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(c_2\)\end{tabular}}}}%
+    \put(0.11960794,0.20117076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.32968563,0.20117076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_2\)\end{tabular}}}}%
+    \put(0.53976594,0.20117076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_3\)\end{tabular}}}}%
+    \put(0.74984626,0.20117076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
+    \put(0.95992399,0.20117076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
+    \put(0.19680465,0.09882252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
+    \put(0.19680465,0.03317273){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
+    \put(0.26245441,0.09882252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.26245441,0.03317273){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_4\)\end{tabular}}}}%
+    \put(0.32810416,0.09882252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.393754,0.09882252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.4171413,0.01784156){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(c_1\)\end{tabular}}}}%
+    \put(0.55639897,0.09882341){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.55639897,0.03317362){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_3\)\end{tabular}}}}%
+    \put(0.62204876,0.09882341){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_1\)\end{tabular}}}}%
+    \put(0.62204876,0.03317362){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
+    \put(0.68769848,0.09882341){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_5\)\end{tabular}}}}%
+    \put(0.75334827,0.09882341){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(f_2\)\end{tabular}}}}%
+    \put(0.77673558,0.01784245){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(c_2\)\end{tabular}}}}%
   \end{picture}%
 \endgroup%
